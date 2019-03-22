@@ -39,8 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.speedtrav = new System.Windows.Forms.Label();
             this.Moonscape = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.yval = new System.Windows.Forms.Label();
+            this.xval = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Movetmr = new System.Windows.Forms.Timer(this.components);
@@ -51,12 +51,21 @@
             this.InfoLbl2 = new System.Windows.Forms.Label();
             this.Infolbl1 = new System.Windows.Forms.Label();
             this.Infolbl3 = new System.Windows.Forms.Label();
+            this.TB1 = new System.Windows.Forms.TextBox();
+            this.TB2 = new System.Windows.Forms.TextBox();
+            this.Fuel = new System.Windows.Forms.Label();
+            this.ErrorLbl = new System.Windows.Forms.Label();
+            this.Coloring = new System.Windows.Forms.PictureBox();
+            this.YN = new System.Windows.Forms.PictureBox();
+            this.Hidu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bottempanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Moonscape)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Coloring)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YN)).BeginInit();
             this.SuspendLayout();
             // 
             // Lander
@@ -104,11 +113,13 @@
             // 
             this.Speed.AutoSize = true;
             this.Speed.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Speed.Location = new System.Drawing.Point(22, 393);
+            this.Speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Speed.Location = new System.Drawing.Point(12, 393);
             this.Speed.Name = "Speed";
-            this.Speed.Size = new System.Drawing.Size(65, 13);
+            this.Speed.Size = new System.Drawing.Size(96, 17);
             this.Speed.TabIndex = 5;
             this.Speed.Text = "Speed (m/s)";
+            this.Speed.Click += new System.EventHandler(this.Speed_Click);
             // 
             // Pad
             // 
@@ -142,9 +153,10 @@
             // 
             this.speedtrav.AutoSize = true;
             this.speedtrav.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.speedtrav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.speedtrav.Location = new System.Drawing.Point(22, 415);
             this.speedtrav.Name = "speedtrav";
-            this.speedtrav.Size = new System.Drawing.Size(28, 13);
+            this.speedtrav.Size = new System.Drawing.Size(31, 15);
             this.speedtrav.TabIndex = 9;
             this.speedtrav.Text = "0.00";
             // 
@@ -157,34 +169,37 @@
             this.Moonscape.TabIndex = 10;
             this.Moonscape.TabStop = false;
             // 
-            // label3
+            // yval
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(94, 371);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "0.00";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.yval.AutoSize = true;
+            this.yval.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.yval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yval.Location = new System.Drawing.Point(94, 371);
+            this.yval.Name = "yval";
+            this.yval.Size = new System.Drawing.Size(31, 15);
+            this.yval.TabIndex = 11;
+            this.yval.Text = "0.00";
+            this.yval.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // xval
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(34, 371);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "0.00";
+            this.xval.AutoSize = true;
+            this.xval.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.xval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xval.Location = new System.Drawing.Point(34, 371);
+            this.xval.Name = "xval";
+            this.xval.Size = new System.Drawing.Size(31, 15);
+            this.xval.TabIndex = 12;
+            this.xval.Text = "0.00";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(71, 371);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 13);
+            this.label5.Size = new System.Drawing.Size(19, 15);
             this.label5.TabIndex = 13;
             this.label5.Text = "Y:";
             // 
@@ -192,9 +207,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(11, 371);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 13);
+            this.label6.Size = new System.Drawing.Size(20, 15);
             this.label6.TabIndex = 14;
             this.label6.Text = "X:";
             // 
@@ -215,7 +231,7 @@
             // Butt
             // 
             this.Butt.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Butt.Location = new System.Drawing.Point(268, 12);
+            this.Butt.Location = new System.Drawing.Point(271, 131);
             this.Butt.Name = "Butt";
             this.Butt.Size = new System.Drawing.Size(203, 47);
             this.Butt.TabIndex = 17;
@@ -225,6 +241,7 @@
             // 
             // PB
             // 
+            this.PB.BackColor = System.Drawing.Color.Aqua;
             this.PB.Location = new System.Drawing.Point(1, 0);
             this.PB.Name = "PB";
             this.PB.Size = new System.Drawing.Size(799, 451);
@@ -234,61 +251,148 @@
             // Infolbl
             // 
             this.Infolbl.AutoSize = true;
-            this.Infolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infolbl.Location = new System.Drawing.Point(7, 12);
+            this.Infolbl.BackColor = System.Drawing.Color.Firebrick;
+            this.Infolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Infolbl.Location = new System.Drawing.Point(610, 220);
             this.Infolbl.Name = "Infolbl";
-            this.Infolbl.Size = new System.Drawing.Size(153, 39);
+            this.Infolbl.Size = new System.Drawing.Size(178, 44);
             this.Infolbl.TabIndex = 19;
             this.Infolbl.Text = "Controls:";
             // 
             // InfoLbl2
             // 
             this.InfoLbl2.AutoSize = true;
-            this.InfoLbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InfoLbl2.Location = new System.Drawing.Point(8, 51);
+            this.InfoLbl2.BackColor = System.Drawing.Color.DarkOrange;
+            this.InfoLbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoLbl2.Location = new System.Drawing.Point(621, 273);
             this.InfoLbl2.Name = "InfoLbl2";
-            this.InfoLbl2.Size = new System.Drawing.Size(207, 31);
+            this.InfoLbl2.Size = new System.Drawing.Size(149, 25);
             this.InfoLbl2.TabIndex = 20;
             this.InfoLbl2.Text = "Left Arrow - Left";
             // 
             // Infolbl1
             // 
             this.Infolbl1.AutoSize = true;
-            this.Infolbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infolbl1.Location = new System.Drawing.Point(8, 82);
+            this.Infolbl1.BackColor = System.Drawing.Color.DarkOrange;
+            this.Infolbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Infolbl1.Location = new System.Drawing.Point(612, 298);
             this.Infolbl1.Name = "Infolbl1";
-            this.Infolbl1.Size = new System.Drawing.Size(243, 31);
+            this.Infolbl1.Size = new System.Drawing.Size(173, 50);
             this.Infolbl1.TabIndex = 21;
-            this.Infolbl1.Text = "Right Arrow - Right";
+            this.Infolbl1.Text = "Right Arrow - Right\r\nTrackBar - Thrust\r\n";
             // 
             // Infolbl3
             // 
             this.Infolbl3.AutoSize = true;
-            this.Infolbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infolbl3.Location = new System.Drawing.Point(12, 140);
+            this.Infolbl3.BackColor = System.Drawing.Color.OrangeRed;
+            this.Infolbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Infolbl3.Location = new System.Drawing.Point(9, 191);
             this.Infolbl3.Name = "Infolbl3";
-            this.Infolbl3.Size = new System.Drawing.Size(646, 310);
+            this.Infolbl3.Size = new System.Drawing.Size(465, 250);
             this.Infolbl3.TabIndex = 22;
             this.Infolbl3.Text = "Thrust:\r\n+10 thrust, per Notch on the TrackBar\r\nFuel Depletes, Thrust amount, eve" +
     "ry 10 Milliseconds\r\n\r\n\r\nGravity:\r\nFixed Fall Value of 30.\r\n\r\nLanding:\r\nMust land" +
     " with a speed, less than 20.";
+            // 
+            // TB1
+            // 
+            this.TB1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB1.ForeColor = System.Drawing.Color.Yellow;
+            this.TB1.Location = new System.Drawing.Point(618, 49);
+            this.TB1.Name = "TB1";
+            this.TB1.Size = new System.Drawing.Size(85, 26);
+            this.TB1.TabIndex = 23;
+            this.TB1.TextChanged += new System.EventHandler(this.TB1_TextChanged);
+            // 
+            // TB2
+            // 
+            this.TB2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB2.ForeColor = System.Drawing.Color.Yellow;
+            this.TB2.Location = new System.Drawing.Point(632, 122);
+            this.TB2.Name = "TB2";
+            this.TB2.Size = new System.Drawing.Size(60, 30);
+            this.TB2.TabIndex = 25;
+            this.TB2.Text = "2500";
+            // 
+            // Fuel
+            // 
+            this.Fuel.AutoSize = true;
+            this.Fuel.BackColor = System.Drawing.Color.Lime;
+            this.Fuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fuel.Location = new System.Drawing.Point(585, 79);
+            this.Fuel.Name = "Fuel";
+            this.Fuel.Size = new System.Drawing.Size(149, 40);
+            this.Fuel.TabIndex = 26;
+            this.Fuel.Text = "How Much Fuel?\r\n      (0-5000)";
+            this.Fuel.Click += new System.EventHandler(this.Fuel_Click);
+            // 
+            // ErrorLbl
+            // 
+            this.ErrorLbl.AutoSize = true;
+            this.ErrorLbl.BackColor = System.Drawing.Color.Yellow;
+            this.ErrorLbl.Font = new System.Drawing.Font("Niagara Engraved", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.ErrorLbl.Location = new System.Drawing.Point(29, 33);
+            this.ErrorLbl.Name = "ErrorLbl";
+            this.ErrorLbl.Size = new System.Drawing.Size(253, 43);
+            this.ErrorLbl.TabIndex = 27;
+            this.ErrorLbl.Text = "Fuel Value Is Incorrect";
+            // 
+            // Coloring
+            // 
+            this.Coloring.BackColor = System.Drawing.Color.DarkOrange;
+            this.Coloring.Location = new System.Drawing.Point(608, 220);
+            this.Coloring.Name = "Coloring";
+            this.Coloring.Size = new System.Drawing.Size(180, 129);
+            this.Coloring.TabIndex = 28;
+            this.Coloring.TabStop = false;
+            // 
+            // YN
+            // 
+            this.YN.BackColor = System.Drawing.Color.Lime;
+            this.YN.Location = new System.Drawing.Point(537, 12);
+            this.YN.Name = "YN";
+            this.YN.Size = new System.Drawing.Size(251, 149);
+            this.YN.TabIndex = 29;
+            this.YN.TabStop = false;
+            // 
+            // Hidu
+            // 
+            this.Hidu.AutoSize = true;
+            this.Hidu.BackColor = System.Drawing.Color.Lime;
+            this.Hidu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hidu.Location = new System.Drawing.Point(540, 27);
+            this.Hidu.Margin = new System.Windows.Forms.Padding(0);
+            this.Hidu.Name = "Hidu";
+            this.Hidu.Size = new System.Drawing.Size(245, 20);
+            this.Hidu.TabIndex = 30;
+            this.Hidu.Text = "What\'s Your Name Captain?";
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Butt);
-            this.Controls.Add(this.Infolbl3);
+            this.Controls.Add(this.Hidu);
+            this.Controls.Add(this.TB2);
+            this.Controls.Add(this.Fuel);
+            this.Controls.Add(this.TB1);
+            this.Controls.Add(this.YN);
             this.Controls.Add(this.Infolbl1);
             this.Controls.Add(this.InfoLbl2);
             this.Controls.Add(this.Infolbl);
+            this.Controls.Add(this.Coloring);
+            this.Controls.Add(this.ErrorLbl);
+            this.Controls.Add(this.Butt);
+            this.Controls.Add(this.Infolbl3);
             this.Controls.Add(this.PB);
             this.Controls.Add(this.SuccessFaillbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.xval);
+            this.Controls.Add(this.yval);
             this.Controls.Add(this.speedtrav);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Pad);
@@ -311,6 +415,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Bottempanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Moonscape)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Coloring)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,8 +434,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label speedtrav;
         private System.Windows.Forms.PictureBox Moonscape;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label yval;
+        private System.Windows.Forms.Label xval;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer Movetmr;
@@ -340,5 +446,12 @@
         private System.Windows.Forms.Label InfoLbl2;
         private System.Windows.Forms.Label Infolbl1;
         private System.Windows.Forms.Label Infolbl3;
+        private System.Windows.Forms.TextBox TB1;
+        private System.Windows.Forms.TextBox TB2;
+        private System.Windows.Forms.Label Fuel;
+        private System.Windows.Forms.Label ErrorLbl;
+        private System.Windows.Forms.PictureBox Coloring;
+        private System.Windows.Forms.PictureBox YN;
+        private System.Windows.Forms.Label Hidu;
     }
 }
