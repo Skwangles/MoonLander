@@ -11,16 +11,15 @@ using System.Windows.Forms;
 namespace Moon_Lander
 {
     public partial class Game : Form
-    {       
+    {
+        ImageList Land = new ImageList();
         bool LeftB;
         bool RightB;
         bool Won = false;
-        int Gravity = 3;
-        int SpeedF = 30;
-        string CapsName;
-        Random Rand = new Random();
-        
-        int TotalF;
+        int Gravity = 3; //Gravity value
+        int SpeedF = 30; //Default Speed of Gravity.
+        string CapsName; //Captains name variable
+        int TotalF;//Total Fuel value set by the user
        
 
         public Game()
@@ -30,23 +29,23 @@ namespace Moon_Lander
 
         private void Game_Load(object sender, EventArgs e)
         {
-            ErrorLbl.Hide();
-            PB.Left = 0;
-            PB.Top = 0;
-            Butt.Left = (PB.Width / 2) - (Butt.Width / 2);
-            Butt.Top = PB.Height / 4;
-            Start("S");
-            SuccessFaillbl.Hide();
-            SuccessFaillbl.Left = 0;
-            SuccessFaillbl.Top = (Moonscape.Height / 2) - (SuccessFaillbl.Height / 2);                                   
-            Pad.Top = Moonscape.Height - Pad.Height;
-            Lander.Top = 0;
+            ErrorLbl.Hide(); //Makes sure the error label is hidden
+            PB.Left = 0; //Sets the starting teal screen to cover the entire screen
+            PB.Top = 0; 
+            Butt.Left = (PB.Width / 2) - (Butt.Width / 2); //sets the start button to centre  of screen
+            Butt.Top = PB.Height / 4; 
+            Start("S"); //Sub which does the case. Show. It shows the info, and start screen
+            SuccessFaillbl.Hide(); //Makes sure label is hidden
+            SuccessFaillbl.Left = 0; 
+            SuccessFaillbl.Top = (Moonscape.Height / 2) - (SuccessFaillbl.Height / 2); //sets position of Labl                                  
+            Pad.Top = Moonscape.Height - Pad.Height; //sets pad y pos
+            Lander.Top = 0; //sets lander y pos
 
         }
 
         void Start(string H)
         {
-            switch (H)
+            switch (H) //Hides Start screen
             {
                 case "H":
                     Butt.Hide();
@@ -62,7 +61,7 @@ namespace Moon_Lander
                     TB2.Hide();
                     Coloring.Hide();
                     break;
-                case "S":
+                case "S": //Shows Start screen
                     Butt.Show();
                     PB.Show();
                     Infolbl.Show();
@@ -84,18 +83,18 @@ namespace Moon_Lander
 
         void Run()
         {
-            CapsName = TB1.Text;
-            FuelBar.Maximum = TotalF;
-            Pad.Left = GetRand(0, (Moonscape.Width - Pad.Width));
-            Lander.Left = GetRand(0, (Moonscape.Width - Lander.Width));
-            TrackBar.Focus();
-            Start("H");
-            System.Threading.Thread.Sleep(500);
-            Movetmr.Start();
+            CapsName = TB1.Text; //Sets Input caps name
+            FuelBar.Maximum = TotalF; //set input fuel num
+            Pad.Left = GetRand(0, (Moonscape.Width - Pad.Width)); //gets random x
+            Lander.Left = GetRand(0, (Moonscape.Width - Lander.Width)); //gets random x
+            TrackBar.Focus(); //Focuses the track bar which detects key presses
+            Start("H"); //Hides start screen
+            System.Threading.Thread.Sleep(500); //Pauses the start of the Game, till user focused
+            Movetmr.Start(); //Starts the game
             
         }
 
-        int GetRand(int min, int max)
+        int GetRand(int min, int max) //gets random value
         {
             Random Rand = new Random();
             return Rand.Next(min, max);
@@ -111,7 +110,7 @@ namespace Moon_Lander
         {
             switch (e.KeyValue)
             {
-                case (char)Keys.Left:
+                case (char)Keys.Left://detects controls, detects Key held down
                     LeftB = true;
                     break;
                 case (char)Keys.Right:
@@ -126,7 +125,7 @@ namespace Moon_Lander
 
         private void Game_KeyUp(object sender, KeyEventArgs e)
         {
-            switch (e.KeyValue)
+            switch (e.KeyValue) //detects release of key
             {
                 case (char)Keys.Left:
                     LeftB = false;
@@ -142,40 +141,40 @@ namespace Moon_Lander
 
         private void Movetmr_Tick(object sender, EventArgs e)
         {
-            yval.Text = (PB.Height - Lander.Top).ToString();
+            yval.Text = (PB.Height - Lander.Top).ToString(); //updateds x,y
             xval.Text = Lander.Left.ToString();
-            SpeedF = (Gravity - TrackBar.Value)*10;
-            speedtrav.Text = ((Gravity - TrackBar.Value) * 10).ToString();
+            SpeedF = (Gravity - TrackBar.Value)*10; //Updates the speed lbl and val
+            speedtrav.Text = ((Gravity - TrackBar.Value) * 10).ToString(); //sets lbl for speed
            
-            if (Lander.Top + Lander.Height >= 335) Checkcol();
+            if (Lander.Top + Lander.Height >= 335) Checkcol(); //Checks if the lander has reached pad's y level
             else
             {
-                ThrustLR();
+                ThrustLR(); //applies thrust movement
             }
-            if (LeftB) Lander.Left -= 2;
-            if (RightB) Lander.Left += 2;
+            if (LeftB) Lander.Left -= 2; //moves left
+            if (RightB) Lander.Left += 2; //moves right
 
         }
 
         void Checkcol() //Checks if The lander, when it reaches bottem has landed on the pad or not, and applys the correct message accordingly
         {
-            if (Lander.Left >= Pad.Left && Lander.Width + Lander.Left <= Pad.Left + Pad.Width)
+            if (Lander.Left >= Pad.Left && Lander.Width + Lander.Left <= Pad.Left + Pad.Width) //checks if on landing pad
             {
-                if (SpeedF <= 20) Won = true; 
-                else { Won = false;}
+                if (SpeedF <= 20) Won = true; //checks if lander is going to fast on touch down
+                else { Won = false;} 
             }
             else
-            { Won = false; }
+            { Won = false; } // if not on pad, crashes
             if (Won)
             {
-                SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF+"m/s";
+                SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF+"m/s"; //based on condition, tells user if they have won
             }
             else
             {
                 SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. Speed was: " + SpeedF + "m/s";
             }
-            Movetmr.Stop();
-            SuccessFaillbl.Show();
+            Movetmr.Stop();//stops game
+            SuccessFaillbl.Show(); //shows the label
         }
 
         void ThrustLR()  //moves lander Left and Right, as well as adds thrust, minus fuel and Apply movement
@@ -189,7 +188,7 @@ namespace Moon_Lander
             }
             else
             {
-                Lander.Top += Gravity - TrackBar.Value; //While there is remaining fuel.
+                Lander.Top += Gravity - TrackBar.Value; //While there is remaining fuel applies thrust.
                 TotalF -= (TrackBar.Value * 10);
                 FuelBar.Value = TotalF;
             }
@@ -200,15 +199,15 @@ namespace Moon_Lander
         private void button2_Click(object sender, EventArgs e)  //Starts game, Hided Info Screen
         {
 
-            ErrorLbl.Hide();
+            ErrorLbl.Hide(); 
             string Cap = TB1.Text;
             string TotalFuel = TB2.Text;
             
             if (Cap != "" && TotalFuel != "")
             {
-                try
+                try //Checks if fuel is a number
                 {
-                    TotalF = Convert.ToInt32(TotalFuel);
+                    TotalF = Convert.ToInt32(TotalFuel); 
                     Run();
                 }
                 catch
