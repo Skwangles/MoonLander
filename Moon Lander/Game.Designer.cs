@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.Lander = new System.Windows.Forms.PictureBox();
             this.TrackBar = new System.Windows.Forms.TrackBar();
             this.FuelBar = new System.Windows.Forms.ProgressBar();
@@ -45,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Movetmr = new System.Windows.Forms.Timer(this.components);
             this.SuccessFaillbl = new System.Windows.Forms.Label();
-            this.Butt = new System.Windows.Forms.Button();
             this.PB = new System.Windows.Forms.PictureBox();
             this.Infolbl = new System.Windows.Forms.Label();
             this.InfoLbl2 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.Coloring = new System.Windows.Forms.PictureBox();
             this.YN = new System.Windows.Forms.PictureBox();
             this.Hidu = new System.Windows.Forms.Label();
+            this.StartImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
@@ -66,14 +67,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Coloring)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartImg)).BeginInit();
             this.SuspendLayout();
             // 
             // Lander
             // 
             this.Lander.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Lander.Location = new System.Drawing.Point(362, 12);
+            this.Lander.Image = ((System.Drawing.Image)(resources.GetObject("Lander.Image")));
+            this.Lander.Location = new System.Drawing.Point(424, 12);
             this.Lander.Name = "Lander";
-            this.Lander.Size = new System.Drawing.Size(37, 35);
+            this.Lander.Size = new System.Drawing.Size(93, 83);
+            this.Lander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Lander.TabIndex = 1;
             this.Lander.TabStop = false;
             // 
@@ -124,9 +128,10 @@
             // Pad
             // 
             this.Pad.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Pad.Location = new System.Drawing.Point(327, 332);
+            this.Pad.Image = ((System.Drawing.Image)(resources.GetObject("Pad.Image")));
+            this.Pad.Location = new System.Drawing.Point(306, 328);
             this.Pad.Name = "Pad";
-            this.Pad.Size = new System.Drawing.Size(113, 17);
+            this.Pad.Size = new System.Drawing.Size(134, 21);
             this.Pad.TabIndex = 6;
             this.Pad.TabStop = false;
             // 
@@ -162,6 +167,7 @@
             // 
             // Moonscape
             // 
+            this.Moonscape.Image = ((System.Drawing.Image)(resources.GetObject("Moonscape.Image")));
             this.Moonscape.Location = new System.Drawing.Point(1, 0);
             this.Moonscape.Margin = new System.Windows.Forms.Padding(0);
             this.Moonscape.Name = "Moonscape";
@@ -227,17 +233,6 @@
             this.SuccessFaillbl.Size = new System.Drawing.Size(119, 31);
             this.SuccessFaillbl.TabIndex = 15;
             this.SuccessFaillbl.Text = "WinLose";
-            // 
-            // Butt
-            // 
-            this.Butt.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Butt.Location = new System.Drawing.Point(271, 131);
-            this.Butt.Name = "Butt";
-            this.Butt.Size = new System.Drawing.Size(203, 47);
-            this.Butt.TabIndex = 17;
-            this.Butt.Text = "Start Game";
-            this.Butt.UseVisualStyleBackColor = true;
-            this.Butt.Click += new System.EventHandler(this.button2_Click);
             // 
             // PB
             // 
@@ -370,11 +365,23 @@
             this.Hidu.TabIndex = 30;
             this.Hidu.Text = "What\'s Your Name Captain?";
             // 
+            // StartImg
+            // 
+            this.StartImg.Image = ((System.Drawing.Image)(resources.GetObject("StartImg.Image")));
+            this.StartImg.Location = new System.Drawing.Point(379, 96);
+            this.StartImg.Name = "StartImg";
+            this.StartImg.Size = new System.Drawing.Size(95, 92);
+            this.StartImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.StartImg.TabIndex = 31;
+            this.StartImg.TabStop = false;
+            this.StartImg.Click += new System.EventHandler(this.StartImg_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.StartImg);
             this.Controls.Add(this.Hidu);
             this.Controls.Add(this.TB2);
             this.Controls.Add(this.Fuel);
@@ -385,7 +392,6 @@
             this.Controls.Add(this.Infolbl);
             this.Controls.Add(this.Coloring);
             this.Controls.Add(this.ErrorLbl);
-            this.Controls.Add(this.Butt);
             this.Controls.Add(this.Infolbl3);
             this.Controls.Add(this.PB);
             this.Controls.Add(this.SuccessFaillbl);
@@ -417,6 +423,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Coloring)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,7 +447,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer Movetmr;
         private System.Windows.Forms.Label SuccessFaillbl;
-        private System.Windows.Forms.Button Butt;
         private System.Windows.Forms.PictureBox PB;
         private System.Windows.Forms.Label Infolbl;
         private System.Windows.Forms.Label InfoLbl2;
@@ -453,5 +459,6 @@
         private System.Windows.Forms.PictureBox Coloring;
         private System.Windows.Forms.PictureBox YN;
         private System.Windows.Forms.Label Hidu;
+        private System.Windows.Forms.PictureBox StartImg;
     }
 }

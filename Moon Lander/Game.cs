@@ -12,7 +12,10 @@ namespace Moon_Lander
 {
     public partial class Game : Form
     {
-        ImageList Land = new ImageList();
+        
+         
+
+
         bool LeftB;
         bool RightB;
         bool Won = false;
@@ -20,8 +23,8 @@ namespace Moon_Lander
         int SpeedF = 30; //Default Speed of Gravity.
         string CapsName; //Captains name variable
         int TotalF;//Total Fuel value set by the user
-       
 
+        string filepath = @"G:\VS - Coding\MoonLanderSchoolProject\Lunar Lander files 2019\" ; 
         public Game()
         {
             InitializeComponent();
@@ -29,11 +32,35 @@ namespace Moon_Lander
 
         private void Game_Load(object sender, EventArgs e)
         {
+            Moonscape.BackgroundImage = Image.FromFile(filepath + "moonScape.jpg");
+            ImageList Land = new ImageList();           
+            Land.ImageSize = new Size(93, 83);
+            //No-Thrust Lander Imgs
+            Land.Images.Add(Image.FromFile(filepath+ @"Landers\uprightLanderEdited.png"));
+            Land.Images.Add(Image.FromFile(filepath+ @"Landers\smashedLander.png"));
+            Land.Images.Add(Image.FromFile(filepath+ @"Landers\rightLander.png"));
+            Land.Images.Add(Image.FromFile(filepath+@"Landers\leftLander.png"));
+            Land.Images.Add(Image.FromFile(filepath + @"Landers\leftLander.png"));
+            //Thrust imgs
+            Land.Images.Add(Image.FromFile(filepath + @"With thrust\leftHalfThrust.png"));
+            Land.Images.Add(Image.FromFile(filepath + @"With thrust\leftThrust.png"));
+            Land.Images.Add(Image.FromFile(filepath + @"With thrust\rightHalfThrust.png"));
+            Land.Images.Add(Image.FromFile(filepath + @"With thrust\rightThrust.png"));
+            Land.Images.Add(Image.FromFile(filepath + @"With thrust\uprightHalfThrust.png"));
+            Land.Images.Add(Image.FromFile(filepath + @"With thrust\uprightThrust.png"));
+            Land.ImageSize = new Size(134,21);
+            //Landing Pads imgs
+            Land.Images.Add(Image.FromFile(filepath + @"Landing pads\landingPadProper.png"));
+            Land.ImageSize = new Size(134,50);
+            Land.Images.Add(Image.FromFile(filepath + @"Landing pads\LanderOnPad.png"));
+           
+
+
             ErrorLbl.Hide(); //Makes sure the error label is hidden
             PB.Left = 0; //Sets the starting teal screen to cover the entire screen
             PB.Top = 0; 
-            Butt.Left = (PB.Width / 2) - (Butt.Width / 2); //sets the start button to centre  of screen
-            Butt.Top = PB.Height / 4; 
+            StartImg.Left = (PB.Width / 2) - (StartImg.Width / 2); //sets the start button to centre  of screen
+            StartImg.Top = PB.Height / 4; 
             Start("S"); //Sub which does the case. Show. It shows the info, and start screen
             SuccessFaillbl.Hide(); //Makes sure label is hidden
             SuccessFaillbl.Left = 0; 
@@ -48,7 +75,7 @@ namespace Moon_Lander
             switch (H) //Hides Start screen
             {
                 case "H":
-                    Butt.Hide();
+                    StartImg.Hide();
                     PB.Hide();
                     Infolbl.Hide();
                     Infolbl1.Hide();
@@ -62,7 +89,7 @@ namespace Moon_Lander
                     Coloring.Hide();
                     break;
                 case "S": //Shows Start screen
-                    Butt.Show();
+                   StartImg.Show();
                     PB.Show();
                     Infolbl.Show();
                     Infolbl1.Show();
@@ -141,7 +168,7 @@ namespace Moon_Lander
 
         private void Movetmr_Tick(object sender, EventArgs e)
         {
-            yval.Text = (PB.Height - Lander.Top).ToString(); //updateds x,y
+            yval.Text = (PB.Height - Lander.Top - Lander.Height).ToString(); //updateds x,y
             xval.Text = Lander.Left.ToString();
             SpeedF = (Gravity - TrackBar.Value)*10; //Updates the speed lbl and val
             speedtrav.Text = ((Gravity - TrackBar.Value) * 10).ToString(); //sets lbl for speed
@@ -164,7 +191,10 @@ namespace Moon_Lander
                 else { Won = false;} 
             }
             else
-            { Won = false; } // if not on pad, crashes
+            {
+                Won = false;
+                Lander.Top = Moonscape.Height - Lander.Height;//drops the Lander to the bottem of the screen, not on the pad
+            } // if not on pad, crashes
             if (Won)
             {
                 SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF+"m/s"; //based on condition, tells user if they have won
@@ -280,6 +310,32 @@ namespace Moon_Lander
         private void Fuel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void StartImg_Click(object sender, EventArgs e)
+        {
+            ErrorLbl.Hide();
+            string Cap = TB1.Text;
+            string TotalFuel = TB2.Text;
+
+            if (Cap != "" && TotalFuel != "")
+            {
+                try //Checks if fuel is a number
+                {
+                    TotalF = Convert.ToInt32(TotalFuel);
+                    Run();
+                }
+                catch
+                {
+                    ErrorLbl.Text = "Error: Enter a correct Fuel Value";
+                    ErrorLbl.Show();
+                }
+            }
+            else
+            {
+                ErrorLbl.Text = "Error: Fill All Textboxes";
+                ErrorLbl.Show();
+            }
         }
     }
 }
