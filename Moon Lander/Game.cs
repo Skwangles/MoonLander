@@ -21,7 +21,7 @@ namespace Moon_Lander
         int SpeedF = 30; //Default Speed of Gravity.
         string CapsName; //Captains name variable
         int TotalF;//Total Fuel value set by the user
-        
+        int wait;
         Random Rand = new Random();
         static string filepath = @"G:\VS - Coding\"; //Change this based on where the Project is
         Image DP = Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\landingPadProper.png");
@@ -33,34 +33,41 @@ namespace Moon_Lander
         private void Game_Load(object sender, EventArgs e)
         {
             Moonscape.BackgroundImage = Image.FromFile((filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\moonScape.jpg"));
-            
+
 
             //setting the picture size for each ImageList
-            
+
             #region Add Images to ImgList
             AddIMGs();
-            
-            
-            #endregion 
+
+
+            #endregion
+            Start("S");
+
+        }
+
+        void setGame()
+        {
             //Adding to the ImgList is in the reigon above
             ErrorLbl.Hide(); //Makes sure the error label is hidden
             PB.Left = 0; //Sets the starting teal screen to cover the entire screen
             PB.Top = 0;
+            Pad.Height = 21;
             Pad.Image = DP;
-            Lander.Image = LanderVar.Images[0];
+            ResetLander();
             StartImg.Left = (PB.Width / 2) - (StartImg.Width / 2); //sets the start button to centre  of screen
             StartImg.Top = (PB.Height / 4) - 20;
-            Start("S"); //Sub which does the case. Show. It shows the info, and start screen
+            
             SuccessFaillbl.Hide(); //Makes sure label is hidden
             SuccessFaillbl.Left = 0;
             SuccessFaillbl.Top = (Moonscape.Height / 2) - (SuccessFaillbl.Height / 2); //sets position of Labl                                  
             PadTop(); //sets pad y pos
             Lander.Top = 0; //sets lander y pos
-
         }
+
         void AddIMGs()
         {
-            
+
             LanderVar.ImageSize = new Size(93, 83);
             PadIL.ImageSize = new Size(134, 100);
             var Land = LanderVar.Images;
@@ -81,7 +88,7 @@ namespace Moon_Lander
             Land.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\With thrust\uprightThrust.png"));//9
 
             //Landing Pads imgs
-            
+
             PadL.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\LanderOnPad.png"));//0
             PadL.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\SmashedLanderOnPad.png"));//1
 
@@ -110,8 +117,10 @@ namespace Moon_Lander
                     Fuel.Hide();
                     TB2.Hide();
                     Coloring.Hide();
+                    PadTop();
                     break;
                 case "S": //Shows Start screen
+                    setGame();
                     StartImg.Show();
                     PB.Show();
                     Infolbl.Show();
@@ -125,9 +134,9 @@ namespace Moon_Lander
                     TB2.Show();
                     Coloring.Show();
                     Lander.Show();
-                    Pad.Height = 21;
-                    Pad.Image = DP;
-                    ResetLander();
+
+
+                    
                     break;
                 default:
                     break;
@@ -205,49 +214,50 @@ namespace Moon_Lander
             else
             {
                 FuelLeft(); //applies thrust movement
-            }
-            if (LeftB)
-            {
-                if (IsThrust) //Checks if thrust is activated for the left movement image
-                {
-                    if (ThrustHalf) //Decides if the Lander Should go to Half Thrust of Full thrust img
-                    {
-                        Lander.Image = LanderVar.Images[4];
-                    }
-                    else
-                    {
-                        Lander.Image = LanderVar.Images[5];
-                    }
-                }
-                else
-                {
-                    Lander.Image = LanderVar.Images[3]; //no thrust Left
-                }
-                Lander.Left -= 2;
-            }//moves left
-             
-            if (RightB)
-            {
-                if (IsThrust) //Checks if thrust is activated for the left movement image
-                {
-                    if (ThrustHalf) //Decides if the Lander Should go to Half Thrust of Full thrust img
-                    {
-                        Lander.Image = LanderVar.Images[6];
-                    }
-                    else
-                    {
-                        Lander.Image = LanderVar.Images[7];
-                    }
-                }
-                else
-                {
-                    Lander.Image = LanderVar.Images[2]; //no thrust 
-                }
-                Lander.Left += 2;
-            }//moves right, with images
-            if (LeftB || RightB) { }
-            else { ResetLander(); }
 
+
+                if (LeftB)
+                {
+                    if (IsThrust) //Checks if thrust is activated for the left movement image
+                    {
+                        if (ThrustHalf) //Decides if the Lander Should go to Half Thrust of Full thrust img
+                        {
+                            Lander.Image = LanderVar.Images[4];
+                        }
+                        else
+                        {
+                            Lander.Image = LanderVar.Images[5];
+                        }
+                    }
+                    else
+                    {
+                        Lander.Image = LanderVar.Images[3]; //no thrust Left
+                    }
+                    Lander.Left -= 2;
+                }//moves left
+
+                if (RightB)
+                {
+                    if (IsThrust) //Checks if thrust is activated for the left movement image
+                    {
+                        if (ThrustHalf) //Decides if the Lander Should go to Half Thrust of Full thrust img
+                        {
+                            Lander.Image = LanderVar.Images[6];
+                        }
+                        else
+                        {
+                            Lander.Image = LanderVar.Images[7];
+                        }
+                    }
+                    else
+                    {
+                        Lander.Image = LanderVar.Images[2]; //no thrust 
+                    }
+                    Lander.Left += 2;
+                }//moves right, with images
+                if (LeftB || RightB) { }
+                else { ResetLander(); }
+            }//If lander is still in play will continue check
         }
 
         void ResetLander()
@@ -278,33 +288,31 @@ namespace Moon_Lander
                 Lander.Hide();
                 if (SpeedF <= 20)
                 {
-                    Won = true; //checks if lander is going to fast on touch down
-                    
-                    Pad.Image = PadIL.Images[0];               
+                 
+                    Pad.Image = PadIL.Images[0];
                     PadTop();
+                    SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF + "m/s";
                 }
                 else
                 {
-                    Won = false;                   
+                 
                     Pad.Image = PadIL.Images[1];
                     PadTop();
+                    SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. You landed too fast at: "+SpeedF+"m/s";
                 }
             }
             else //If it reaches bottem and isn't on pad Crashes
             {
                 Lander.Image = LanderVar.Images[1];
-                Won = false;
+                SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. You missed the Landing Pad.";
                 Lander.Top = Moonscape.Height - Lander.Height;//drops the Lander to the bottem of the screen
             } // if not on pad, crashes
-            if (Won)
-            {
-                SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF + "m/s"; //based on condition, tells user if they have won
-            }
-            else
-            {
-                SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. Speed was: " + SpeedF + "m/s";
-            }            
+           
             SuccessFaillbl.Show(); //shows the label
+            timer1.Start();
+
+
+
         }
 
         void FuelLeft()  //moves lander Left and Right, as well as adds thrust, minus fuel and Apply movement
@@ -395,9 +403,9 @@ namespace Moon_Lander
             {
                 try //Checks if fuel is a number
                 {
-                    
+
                     TotalF = Convert.ToInt32(TotalFuel);
-                    if(TotalF >= 0 && TotalF <= 5000)
+                    if (TotalF >= 0 && TotalF <= 5000)
                     {
                         Run();
                     }
@@ -419,5 +427,15 @@ namespace Moon_Lander
                 ErrorLbl.Show();
             }
         }//Start Button
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            wait++;
+            if(wait > 20)
+            {
+                timer1.Stop();
+                Start("S");              
+            }
+        }
     }
 }

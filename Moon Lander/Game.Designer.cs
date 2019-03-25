@@ -61,6 +61,7 @@
             this.StartImg = new System.Windows.Forms.PictureBox();
             this.LanderVar = new System.Windows.Forms.ImageList(this.components);
             this.PadIL = new System.Windows.Forms.ImageList(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
@@ -393,6 +394,10 @@
             this.PadIL.ImageSize = new System.Drawing.Size(16, 16);
             this.PadIL.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,5 +484,6 @@
         private System.Windows.Forms.PictureBox StartImg;
         private System.Windows.Forms.ImageList LanderVar;
         private System.Windows.Forms.ImageList PadIL;
+        private System.Windows.Forms.Timer timer1;
     }
 }
