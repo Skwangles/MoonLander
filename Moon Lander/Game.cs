@@ -225,7 +225,7 @@ namespace Moon_Lander
                 }
                 Lander.Left -= 2;
             }//moves left
-            else { ResetLander(); } //resets the image
+             
             if (RightB)
             {
                 if (IsThrust) //Checks if thrust is activated for the left movement image
@@ -245,6 +245,7 @@ namespace Moon_Lander
                 }
                 Lander.Left += 2;
             }//moves right, with images
+            if (LeftB || RightB) { }
             else { ResetLander(); }
 
         }
