@@ -2220,4 +2220,10 @@
         ljWArEy1rbbVttpW22pbbatt3/L2ne/8f8lR4JZjVlH+AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="LanderVar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>118, 17</value>
+  </metadata>
+  <metadata name="PadIL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>228, 17</value>
+  </metadata>
 </root>

@@ -59,6 +59,8 @@
             this.YN = new System.Windows.Forms.PictureBox();
             this.Hidu = new System.Windows.Forms.Label();
             this.StartImg = new System.Windows.Forms.PictureBox();
+            this.LanderVar = new System.Windows.Forms.ImageList(this.components);
+            this.PadIL = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
@@ -132,6 +134,7 @@
             this.Pad.Location = new System.Drawing.Point(306, 328);
             this.Pad.Name = "Pad";
             this.Pad.Size = new System.Drawing.Size(134, 21);
+            this.Pad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pad.TabIndex = 6;
             this.Pad.TabStop = false;
             // 
@@ -222,6 +225,7 @@
             // 
             // Movetmr
             // 
+            this.Movetmr.Interval = 50;
             this.Movetmr.Tick += new System.EventHandler(this.Movetmr_Tick);
             // 
             // SuccessFaillbl
@@ -309,7 +313,7 @@
             this.TB2.Name = "TB2";
             this.TB2.Size = new System.Drawing.Size(60, 30);
             this.TB2.TabIndex = 25;
-            this.TB2.Text = "2500";
+            this.TB2.Text = "5000";
             // 
             // Fuel
             // 
@@ -374,7 +378,20 @@
             this.StartImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.StartImg.TabIndex = 31;
             this.StartImg.TabStop = false;
+            this.StartImg.Visible = false;
             this.StartImg.Click += new System.EventHandler(this.StartImg_Click);
+            // 
+            // LanderVar
+            // 
+            this.LanderVar.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.LanderVar.ImageSize = new System.Drawing.Size(16, 16);
+            this.LanderVar.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // PadIL
+            // 
+            this.PadIL.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.PadIL.ImageSize = new System.Drawing.Size(16, 16);
+            this.PadIL.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Game
             // 
@@ -401,13 +418,13 @@
             this.Controls.Add(this.yval);
             this.Controls.Add(this.speedtrav);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Pad);
             this.Controls.Add(this.Speed);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FuelBar);
             this.Controls.Add(this.TrackBar);
             this.Controls.Add(this.Lander);
             this.Controls.Add(this.Bottempanel);
+            this.Controls.Add(this.Pad);
             this.Controls.Add(this.Moonscape);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Game";
@@ -460,5 +477,7 @@
         private System.Windows.Forms.PictureBox YN;
         private System.Windows.Forms.Label Hidu;
         private System.Windows.Forms.PictureBox StartImg;
+        private System.Windows.Forms.ImageList LanderVar;
+        private System.Windows.Forms.ImageList PadIL;
     }
 }
