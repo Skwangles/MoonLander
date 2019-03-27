@@ -39,7 +39,7 @@ namespace Moon_Lander
         private void Game_Load(object sender, EventArgs e)
         {
             Moonscape.BackgroundImage = Image.FromFile((filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\moonScape.jpg"));
-            Gravity = Grav * 100;
+            Gravity = Grav * 10;
 
             //setting the picture size for each ImageList
 
@@ -204,7 +204,7 @@ namespace Moon_Lander
         #endregion
         private void Movetmr_Tick(object sender, EventArgs e)
         {
-           TrackVal = ((TrackBar.Value*10)/40);
+           TrackVal = ((TrackBar.Value)/40);
             if (TrackVal != 0) //Checks if track bar is applying thrust, and//or is less than half
             {
                 IsThrust = true;
@@ -330,13 +330,13 @@ namespace Moon_Lander
             Lander.Left += (LeftB == true ? -2 : (RightB == true ? 2 : 0));
             if (TotalF - (TrackBar.Value) <= 0) //Once Fuel has run out, makes sure only gravtiy works. LeftRight movement still works.
             {
-                Lander.Top += Gravity/100;
+                Lander.Top += Gravity/10;
                 TotalF = 0;
                 FuelBar.Value = 0;
             }
             else
             {
-                Lander.Top += SpeedF/100; //While there is remaining fuel applies thrust.
+                Lander.Top += SpeedF/10; //While there is remaining fuel applies thrust.
                 TotalF -= (TrackBar.Value);
                 FuelBar.Value = TotalF;
             }
