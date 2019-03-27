@@ -83,12 +83,14 @@
             this.Lander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Lander.TabIndex = 1;
             this.Lander.TabStop = false;
+            this.Lander.LocationChanged += new System.EventHandler(this.Lander_LocationChanged);
+            this.Lander.Click += new System.EventHandler(this.Lander_Click);
             // 
             // TrackBar
             // 
             this.TrackBar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.TrackBar.LargeChange = 0;
-            this.TrackBar.Location = new System.Drawing.Point(132, 387);
+            this.TrackBar.Location = new System.Drawing.Point(128, 439);
             this.TrackBar.Maximum = 40;
             this.TrackBar.Name = "TrackBar";
             this.TrackBar.Size = new System.Drawing.Size(449, 45);
@@ -100,7 +102,7 @@
             // 
             // FuelBar
             // 
-            this.FuelBar.Location = new System.Drawing.Point(639, 393);
+            this.FuelBar.Location = new System.Drawing.Point(641, 439);
             this.FuelBar.Name = "FuelBar";
             this.FuelBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FuelBar.Size = new System.Drawing.Size(129, 35);
@@ -110,7 +112,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(690, 371);
+            this.label1.Location = new System.Drawing.Point(695, 423);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 4;
@@ -121,7 +123,7 @@
             this.Speed.AutoSize = true;
             this.Speed.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Speed.Location = new System.Drawing.Point(12, 393);
+            this.Speed.Location = new System.Drawing.Point(8, 445);
             this.Speed.Name = "Speed";
             this.Speed.Size = new System.Drawing.Size(97, 17);
             this.Speed.TabIndex = 5;
@@ -132,7 +134,7 @@
             // 
             this.Pad.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Pad.Image = ((System.Drawing.Image)(resources.GetObject("Pad.Image")));
-            this.Pad.Location = new System.Drawing.Point(306, 328);
+            this.Pad.Location = new System.Drawing.Point(315, 372);
             this.Pad.Name = "Pad";
             this.Pad.Size = new System.Drawing.Size(134, 21);
             this.Pad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -142,7 +144,7 @@
             // Bottempanel
             // 
             this.Bottempanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Bottempanel.Location = new System.Drawing.Point(1, 349);
+            this.Bottempanel.Location = new System.Drawing.Point(1, 393);
             this.Bottempanel.Margin = new System.Windows.Forms.Padding(0);
             this.Bottempanel.Name = "Bottempanel";
             this.Bottempanel.Size = new System.Drawing.Size(799, 102);
@@ -152,7 +154,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 371);
+            this.label2.Location = new System.Drawing.Point(332, 415);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 8;
@@ -163,7 +165,7 @@
             this.speedtrav.AutoSize = true;
             this.speedtrav.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.speedtrav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speedtrav.Location = new System.Drawing.Point(22, 415);
+            this.speedtrav.Location = new System.Drawing.Point(24, 462);
             this.speedtrav.Name = "speedtrav";
             this.speedtrav.Size = new System.Drawing.Size(31, 15);
             this.speedtrav.TabIndex = 9;
@@ -175,7 +177,7 @@
             this.Moonscape.Location = new System.Drawing.Point(1, 0);
             this.Moonscape.Margin = new System.Windows.Forms.Padding(0);
             this.Moonscape.Name = "Moonscape";
-            this.Moonscape.Size = new System.Drawing.Size(799, 349);
+            this.Moonscape.Size = new System.Drawing.Size(799, 393);
             this.Moonscape.TabIndex = 10;
             this.Moonscape.TabStop = false;
             // 
@@ -184,7 +186,7 @@
             this.yval.AutoSize = true;
             this.yval.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.yval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yval.Location = new System.Drawing.Point(94, 371);
+            this.yval.Location = new System.Drawing.Point(95, 413);
             this.yval.Name = "yval";
             this.yval.Size = new System.Drawing.Size(31, 15);
             this.yval.TabIndex = 11;
@@ -196,7 +198,7 @@
             this.xval.AutoSize = true;
             this.xval.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.xval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xval.Location = new System.Drawing.Point(34, 371);
+            this.xval.Location = new System.Drawing.Point(34, 413);
             this.xval.Name = "xval";
             this.xval.Size = new System.Drawing.Size(31, 15);
             this.xval.TabIndex = 12;
@@ -207,7 +209,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 371);
+            this.label5.Location = new System.Drawing.Point(71, 413);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 15);
             this.label5.TabIndex = 13;
@@ -218,7 +220,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 371);
+            this.label6.Location = new System.Drawing.Point(8, 413);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 15);
             this.label6.TabIndex = 14;
@@ -242,9 +244,9 @@
             // PB
             // 
             this.PB.BackColor = System.Drawing.Color.Aqua;
-            this.PB.Location = new System.Drawing.Point(1, 0);
+            this.PB.Location = new System.Drawing.Point(-682, -377);
             this.PB.Name = "PB";
-            this.PB.Size = new System.Drawing.Size(799, 451);
+            this.PB.Size = new System.Drawing.Size(799, 496);
             this.PB.TabIndex = 18;
             this.PB.TabStop = false;
             // 
@@ -286,9 +288,9 @@
             this.Infolbl3.AutoSize = true;
             this.Infolbl3.BackColor = System.Drawing.Color.OrangeRed;
             this.Infolbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infolbl3.Location = new System.Drawing.Point(3, 220);
+            this.Infolbl3.Location = new System.Drawing.Point(6, 262);
             this.Infolbl3.Name = "Infolbl3";
-            this.Infolbl3.Size = new System.Drawing.Size(479, 225);
+            this.Infolbl3.Size = new System.Drawing.Size(476, 225);
             this.Infolbl3.TabIndex = 22;
             this.Infolbl3.Text = resources.GetString("Infolbl3.Text");
             // 
@@ -400,7 +402,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 496);
             this.Controls.Add(this.StartImg);
             this.Controls.Add(this.Hidu);
             this.Controls.Add(this.TB2);
