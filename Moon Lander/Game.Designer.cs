@@ -89,7 +89,7 @@
             this.TrackBar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.TrackBar.LargeChange = 0;
             this.TrackBar.Location = new System.Drawing.Point(132, 387);
-            this.TrackBar.Maximum = 5;
+            this.TrackBar.Maximum = 40;
             this.TrackBar.Name = "TrackBar";
             this.TrackBar.Size = new System.Drawing.Size(449, 45);
             this.TrackBar.SmallChange = 0;
@@ -123,9 +123,9 @@
             this.Speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Speed.Location = new System.Drawing.Point(12, 393);
             this.Speed.Name = "Speed";
-            this.Speed.Size = new System.Drawing.Size(96, 17);
+            this.Speed.Size = new System.Drawing.Size(97, 17);
             this.Speed.TabIndex = 5;
-            this.Speed.Text = "Speed (m/s)";
+            this.Speed.Text = "Speed (kph)";
             this.Speed.Click += new System.EventHandler(this.Speed_Click);
             // 
             // Pad
@@ -286,13 +286,11 @@
             this.Infolbl3.AutoSize = true;
             this.Infolbl3.BackColor = System.Drawing.Color.OrangeRed;
             this.Infolbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infolbl3.Location = new System.Drawing.Point(9, 191);
+            this.Infolbl3.Location = new System.Drawing.Point(3, 220);
             this.Infolbl3.Name = "Infolbl3";
-            this.Infolbl3.Size = new System.Drawing.Size(465, 250);
+            this.Infolbl3.Size = new System.Drawing.Size(479, 225);
             this.Infolbl3.TabIndex = 22;
-            this.Infolbl3.Text = "Thrust:\r\n+10 thrust, per Notch on the TrackBar\r\nFuel Depletes, Thrust amount, eve" +
-    "ry 10 Milliseconds\r\n\r\n\r\nGravity:\r\nFixed Fall Value of 30.\r\n\r\nLanding:\r\nMust land" +
-    " with a speed, less than 20.";
+            this.Infolbl3.Text = resources.GetString("Infolbl3.Text");
             // 
             // TB1
             // 
@@ -373,7 +371,7 @@
             // StartImg
             // 
             this.StartImg.Image = ((System.Drawing.Image)(resources.GetObject("StartImg.Image")));
-            this.StartImg.Location = new System.Drawing.Point(379, 96);
+            this.StartImg.Location = new System.Drawing.Point(387, 71);
             this.StartImg.Name = "StartImg";
             this.StartImg.Size = new System.Drawing.Size(95, 92);
             this.StartImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
