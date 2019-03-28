@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Moon_Lander
@@ -19,8 +13,9 @@ namespace Moon_Lander
         int TooFast = 15; //Sets the limit for how fast lander should be traveling on touch down
         public int TrackVal;
         const int Gravity = 1; //Gravity value
+        int score = 0;
         bool Is0;
-        int StartingTrackVal = 20; //Starting Trackbar value.
+        int StartingTrackVal = 15; //Starting Trackbar value.
         int SpeedF = 0; //Default Speed of Gravity.
         string CapsName; //Captains name variable
         int TotalF;//Total Fuel value set by the user
@@ -29,7 +24,7 @@ namespace Moon_Lander
         static string filepath = @"G:\VS - Coding\"; //Change this based on where the Project is
 
         //To keep it public and outside a method
-        Image DP = Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\landingPadProper.png");
+       
 
 
         public Game()
@@ -39,8 +34,9 @@ namespace Moon_Lander
         #region starting Processes
         private void Game_Load(object sender, EventArgs e)
         {
-            Moonscape.BackgroundImage = Image.FromFile((filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\moonScape.jpg"));
-
+           
+            Moonscape.Left = 0;
+            Moonscape.Top = 0;
 
             //setting the picture size for each ImageList
 
@@ -55,12 +51,13 @@ namespace Moon_Lander
 
         void setGame()
         {
+            scorelbl.Text = score.ToString();
             //Adding to the ImgList is in the reigon above
             ErrorLbl.Hide(); //Makes sure the error label is hidden
             PB.Left = 0; //Sets the starting teal screen to cover the entire screen
             PB.Top = 0;
-            Pad.Height = 21;
-            Pad.Image = DP;
+            Pad.Height = 73;
+            Pad.Image = PadIL.Images[2];
             ResetLander();
             StartImg.Left = (PB.Width / 2) - (StartImg.Width / 2); //sets the start button to centre  of screen
             StartImg.Top = (PB.Height / 4) - (StartImg.Height / 8);
@@ -73,15 +70,16 @@ namespace Moon_Lander
             TrackBar.Value = StartingTrackVal;
         }
         #region Focusi Grav issue
+        
         void AddIMGs()
         {
 
-            LanderVar.ImageSize = new Size(93, 83);
-            PadIL.ImageSize = new Size(134, 100);
+            LanderVar.ImageSize = new Size(93, 109);
+            PadIL.ImageSize = new Size(134, 73);
             var Land = LanderVar.Images;
             var PadL = PadIL.Images;
             //No-Thrust Lander Imgs
-            Land.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landers\uprightLanderEdited.png")); //No Thrust Falling No Movement 0
+            Land.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landers\uprightLander.png")); //No Thrust Falling No Movement 0
             Land.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landers\smashedLander.png")); //End Lander 1
             Land.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landers\rightLander.png"));//2
             Land.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landers\leftLander.png"));//3
@@ -99,11 +97,11 @@ namespace Moon_Lander
 
             PadL.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\LanderOnPad.png"));//0
             PadL.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\SmashedLanderOnPad.png"));//1
-
+            PadL.Add(Image.FromFile(filepath + @"MoonLanderSchoolProject\Lunar Lander files 2019\Landing pads\landingPad.png"));//2
 
         }
 
-
+    
         void PadTop()
         {
             Pad.Top = Moonscape.Height - Pad.Height;
@@ -143,8 +141,6 @@ namespace Moon_Lander
                     TB2.Show();
                     Coloring.Show();
                     Lander.Show();
-
-
 
                     break;
                 default:
@@ -251,7 +247,7 @@ namespace Moon_Lander
             //Terminal velocity check
 
             //Set the label to the Speed.
-            if (Lander.Top + Lander.Height >= Moonscape.Height - Pad.Height) Checkcol(); //Checks if the lander has reached pad's y level
+            if (Lander.Top + Lander.Height -  20 >= Moonscape.Height - Pad.Height+52) Checkcol(); //Checks if the lander has reached pad's y level
             else
             {
                 FuelLeft(); //applies thrust movement
@@ -332,6 +328,7 @@ namespace Moon_Lander
 
                     Pad.Image = PadIL.Images[0];
                     PadTop();
+                    score++;
                     SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF + "kph";
                 }
                 else
@@ -345,7 +342,7 @@ namespace Moon_Lander
             {
                 Lander.Image = LanderVar.Images[1];
                 SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. You missed the Landing Pad.";
-                Lander.Top = Moonscape.Height - Lander.Height;//drops the Lander to the bottem of the screen
+                Lander.Top = Moonscape.Height - Lander.Height+20;//drops the Lander to the bottem of the screen
             } // if not on pad, crashes
 
             SuccessFaillbl.Show(); //shows the label
@@ -378,8 +375,6 @@ namespace Moon_Lander
 
         }
         #region tofocus on grav issue
-
-
 
         #region Bunch Of Collapsed, and Trackbar Key listners
         private void button2_Click(object sender, EventArgs e) { }  //OldStartButtonhusk
@@ -503,6 +498,17 @@ namespace Moon_Lander
                 SpeedF = (SpeedF * -1);
                 TrackBar.Value = 10;
             }
+        }
+
+        private void Coloring_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrackBar_ValueChanged(object sender, EventArgs e)
+        {
+            double Thrustnum = TrackBar.Value / 15;
+            ThrustVal.Text = (Convert.ToInt32(Thrustnum)).ToString();
         }
     }
     #endregion

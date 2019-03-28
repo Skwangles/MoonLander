@@ -62,6 +62,9 @@
             this.LanderVar = new System.Windows.Forms.ImageList(this.components);
             this.PadIL = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ThrustVal = new System.Windows.Forms.Label();
+            this.Scoretxtlbl = new System.Windows.Forms.Label();
+            this.scorelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
@@ -75,12 +78,12 @@
             // 
             // Lander
             // 
-            this.Lander.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Lander.BackColor = System.Drawing.Color.Transparent;
             this.Lander.Image = ((System.Drawing.Image)(resources.GetObject("Lander.Image")));
-            this.Lander.Location = new System.Drawing.Point(424, 12);
+            this.Lander.Location = new System.Drawing.Point(407, 0);
             this.Lander.Name = "Lander";
-            this.Lander.Size = new System.Drawing.Size(93, 83);
-            this.Lander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Lander.Size = new System.Drawing.Size(93, 109);
+            this.Lander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Lander.TabIndex = 1;
             this.Lander.TabStop = false;
             this.Lander.LocationChanged += new System.EventHandler(this.Lander_LocationChanged);
@@ -96,6 +99,7 @@
             this.TrackBar.Size = new System.Drawing.Size(449, 45);
             this.TrackBar.SmallChange = 0;
             this.TrackBar.TabIndex = 2;
+            this.TrackBar.ValueChanged += new System.EventHandler(this.TrackBar_ValueChanged);
             this.TrackBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrackBar_KeyDown);
             this.TrackBar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TrackBar_KeyPress);
             this.TrackBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TrackBar_KeyUp);
@@ -132,11 +136,11 @@
             // 
             // Pad
             // 
-            this.Pad.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Pad.BackColor = System.Drawing.Color.Transparent;
             this.Pad.Image = ((System.Drawing.Image)(resources.GetObject("Pad.Image")));
-            this.Pad.Location = new System.Drawing.Point(315, 372);
+            this.Pad.Location = new System.Drawing.Point(315, 320);
             this.Pad.Name = "Pad";
-            this.Pad.Size = new System.Drawing.Size(134, 21);
+            this.Pad.Size = new System.Drawing.Size(134, 73);
             this.Pad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pad.TabIndex = 6;
             this.Pad.TabStop = false;
@@ -144,7 +148,7 @@
             // Bottempanel
             // 
             this.Bottempanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Bottempanel.Location = new System.Drawing.Point(1, 393);
+            this.Bottempanel.Location = new System.Drawing.Point(1, 396);
             this.Bottempanel.Margin = new System.Windows.Forms.Padding(0);
             this.Bottempanel.Name = "Bottempanel";
             this.Bottempanel.Size = new System.Drawing.Size(799, 102);
@@ -154,11 +158,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Location = new System.Drawing.Point(332, 415);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Thrust";
+            this.label2.Text = "Thrust:";
             // 
             // speedtrav
             // 
@@ -173,7 +178,7 @@
             // 
             // Moonscape
             // 
-            this.Moonscape.Image = ((System.Drawing.Image)(resources.GetObject("Moonscape.Image")));
+            this.Moonscape.BackColor = System.Drawing.Color.Transparent;
             this.Moonscape.Location = new System.Drawing.Point(1, 0);
             this.Moonscape.Margin = new System.Windows.Forms.Padding(0);
             this.Moonscape.Name = "Moonscape";
@@ -244,7 +249,7 @@
             // PB
             // 
             this.PB.BackColor = System.Drawing.Color.Aqua;
-            this.PB.Location = new System.Drawing.Point(-682, -377);
+            this.PB.Location = new System.Drawing.Point(-759, 462);
             this.PB.Name = "PB";
             this.PB.Size = new System.Drawing.Size(799, 496);
             this.PB.TabIndex = 18;
@@ -314,7 +319,6 @@
             this.TB2.Name = "TB2";
             this.TB2.Size = new System.Drawing.Size(60, 30);
             this.TB2.TabIndex = 25;
-            this.TB2.Text = "5000";
             // 
             // Fuel
             // 
@@ -348,6 +352,7 @@
             this.Coloring.Size = new System.Drawing.Size(180, 129);
             this.Coloring.TabIndex = 28;
             this.Coloring.TabStop = false;
+            this.Coloring.Click += new System.EventHandler(this.Coloring_Click);
             // 
             // YN
             // 
@@ -398,24 +403,62 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ThrustVal
+            // 
+            this.ThrustVal.AutoSize = true;
+            this.ThrustVal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ThrustVal.Location = new System.Drawing.Point(384, 415);
+            this.ThrustVal.Name = "ThrustVal";
+            this.ThrustVal.Size = new System.Drawing.Size(35, 13);
+            this.ThrustVal.TabIndex = 32;
+            this.ThrustVal.Text = "label3";
+            // 
+            // Scoretxtlbl
+            // 
+            this.Scoretxtlbl.AutoSize = true;
+            this.Scoretxtlbl.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Scoretxtlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoretxtlbl.ForeColor = System.Drawing.Color.Chocolate;
+            this.Scoretxtlbl.Location = new System.Drawing.Point(8, 9);
+            this.Scoretxtlbl.Name = "Scoretxtlbl";
+            this.Scoretxtlbl.Size = new System.Drawing.Size(55, 17);
+            this.Scoretxtlbl.TabIndex = 33;
+            this.Scoretxtlbl.Text = "Score:";
+            // 
+            // scorelbl
+            // 
+            this.scorelbl.AutoSize = true;
+            this.scorelbl.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.scorelbl.ForeColor = System.Drawing.Color.Chocolate;
+            this.scorelbl.Location = new System.Drawing.Point(69, 12);
+            this.scorelbl.Name = "scorelbl";
+            this.scorelbl.Size = new System.Drawing.Size(35, 13);
+            this.scorelbl.TabIndex = 34;
+            this.scorelbl.Text = "label3";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.Scoretxtlbl);
+            this.Controls.Add(this.scorelbl);
             this.Controls.Add(this.StartImg);
             this.Controls.Add(this.Hidu);
-            this.Controls.Add(this.TB2);
-            this.Controls.Add(this.Fuel);
             this.Controls.Add(this.TB1);
+            this.Controls.Add(this.Fuel);
+            this.Controls.Add(this.TB2);
             this.Controls.Add(this.YN);
             this.Controls.Add(this.Infolbl1);
             this.Controls.Add(this.InfoLbl2);
             this.Controls.Add(this.Infolbl);
             this.Controls.Add(this.Coloring);
-            this.Controls.Add(this.ErrorLbl);
             this.Controls.Add(this.Infolbl3);
+            this.Controls.Add(this.ErrorLbl);
             this.Controls.Add(this.PB);
+            this.Controls.Add(this.ThrustVal);
             this.Controls.Add(this.SuccessFaillbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -427,8 +470,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FuelBar);
             this.Controls.Add(this.TrackBar);
-            this.Controls.Add(this.Lander);
             this.Controls.Add(this.Bottempanel);
+            this.Controls.Add(this.Lander);
             this.Controls.Add(this.Pad);
             this.Controls.Add(this.Moonscape);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -485,5 +528,8 @@
         private System.Windows.Forms.ImageList LanderVar;
         private System.Windows.Forms.ImageList PadIL;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label ThrustVal;
+        private System.Windows.Forms.Label Scoretxtlbl;
+        private System.Windows.Forms.Label scorelbl;
     }
 }
