@@ -305,6 +305,7 @@
             this.TB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB1.ForeColor = System.Drawing.Color.Yellow;
             this.TB1.Location = new System.Drawing.Point(618, 49);
+            this.TB1.MaxLength = 9;
             this.TB1.Name = "TB1";
             this.TB1.Size = new System.Drawing.Size(85, 26);
             this.TB1.TabIndex = 23;
@@ -316,6 +317,7 @@
             this.TB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB2.ForeColor = System.Drawing.Color.Yellow;
             this.TB2.Location = new System.Drawing.Point(632, 122);
+            this.TB2.MaxLength = 4;
             this.TB2.Name = "TB2";
             this.TB2.Size = new System.Drawing.Size(60, 30);
             this.TB2.TabIndex = 25;
@@ -343,6 +345,7 @@
             this.ErrorLbl.Size = new System.Drawing.Size(253, 43);
             this.ErrorLbl.TabIndex = 27;
             this.ErrorLbl.Text = "Fuel Value Is Incorrect";
+            this.ErrorLbl.TextChanged += new System.EventHandler(this.ErrorLbl_TextChanged);
             // 
             // Coloring
             // 
@@ -432,9 +435,9 @@
             this.scorelbl.ForeColor = System.Drawing.Color.Chocolate;
             this.scorelbl.Location = new System.Drawing.Point(69, 12);
             this.scorelbl.Name = "scorelbl";
-            this.scorelbl.Size = new System.Drawing.Size(35, 13);
+            this.scorelbl.Size = new System.Drawing.Size(13, 13);
             this.scorelbl.TabIndex = 34;
-            this.scorelbl.Text = "label3";
+            this.scorelbl.Text = "0";
             // 
             // Game
             // 

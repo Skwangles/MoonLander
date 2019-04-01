@@ -20,11 +20,13 @@ namespace Moon_Lander
         string CapsName; //Captains name variable
         int TotalF;//Total Fuel value set by the user
         int wait;
+
+        string Character = "`~!@#$%^&*()_+{}|\\][-=;':\",./<>?1234567890";
         Random Rand = new Random();
         static string filepath = @"G:\VS - Coding\"; //Change this based on where the Project is
 
         //To keep it public and outside a method
-       
+
 
 
         public Game()
@@ -34,7 +36,7 @@ namespace Moon_Lander
         #region starting Processes
         private void Game_Load(object sender, EventArgs e)
         {
-           
+
             Moonscape.Left = 0;
             Moonscape.Top = 0;
 
@@ -60,7 +62,7 @@ namespace Moon_Lander
             Pad.Image = PadIL.Images[2];
             ResetLander();
             StartImg.Left = (PB.Width / 2) - (StartImg.Width / 2); //sets the start button to centre  of screen
-            StartImg.Top = (PB.Height / 4) - (StartImg.Height / 8);
+            StartImg.Top = (PB.Height / 4) - (StartImg.Height / 17);
             wait = 0;
             SuccessFaillbl.Hide(); //Makes sure label is hidden
             SuccessFaillbl.Left = 0;
@@ -70,7 +72,7 @@ namespace Moon_Lander
             TrackBar.Value = StartingTrackVal;
         }
         #region Focusi Grav issue
-        
+
         void AddIMGs()
         {
 
@@ -101,7 +103,7 @@ namespace Moon_Lander
 
         }
 
-    
+
         void PadTop()
         {
             Pad.Top = Moonscape.Height - Pad.Height;
@@ -205,7 +207,7 @@ namespace Moon_Lander
         #endregion
         private void Movetmr_Tick(object sender, EventArgs e)
         {
-            TrackVal = (TrackBar.Value) / 15; 
+            TrackVal = (TrackBar.Value) / 15;
 
             #region Half or greater than half thrust checker
             if (TrackBar.Value != 0) //Checks if track bar is applying thrust, and//or is less than half
@@ -224,14 +226,14 @@ namespace Moon_Lander
             if (Is0)
             {
                 SpeedF += Gravity;
-               
+
             }
             else
             {
                 SpeedF += Gravity;
                 SpeedF -= TrackVal;
             }
-  
+
             if (SpeedF > 20)
             {
                 SpeedF = 20;
@@ -247,7 +249,7 @@ namespace Moon_Lander
             //Terminal velocity check
 
             //Set the label to the Speed.
-            if (Lander.Top + Lander.Height -  20 >= Moonscape.Height - Pad.Height+52) Checkcol(); //Checks if the lander has reached pad's y level
+            if (Lander.Top + Lander.Height - 20 >= Moonscape.Height - Pad.Height + 52) Checkcol(); //Checks if the lander has reached pad's y level
             else
             {
                 FuelLeft(); //applies thrust movement
@@ -329,20 +331,20 @@ namespace Moon_Lander
                     Pad.Image = PadIL.Images[0];
                     PadTop();
                     score++;
-                    SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete. Speed was: " + SpeedF + "kph";
+                    SuccessFaillbl.Text = "Congrats Captain " + CapsName + ", Mission Complete." + Environment.NewLine + " Speed was: " + SpeedF + "kph";
                 }
                 else
                 {
                     Pad.Image = PadIL.Images[1];
                     PadTop();
-                    SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. You landed too fast at: " + SpeedF + "kph";
+                    SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed." + Environment.NewLine + " You landed too fast at: " + SpeedF + "kph";
                 }
             }
             else //If it reaches bottem and isn't on pad Crashes
             {
                 Lander.Image = LanderVar.Images[1];
                 SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. You missed the Landing Pad.";
-                Lander.Top = Moonscape.Height - Lander.Height+20;//drops the Lander to the bottem of the screen
+                Lander.Top = Moonscape.Height - Lander.Height + 20;//drops the Lander to the bottem of the screen
             } // if not on pad, crashes
 
             SuccessFaillbl.Show(); //shows the label
@@ -359,14 +361,14 @@ namespace Moon_Lander
             if (TotalF - TrackBar.Value <= 0) //Once Fuel has run out, makes sure only gravtiy works. LeftRight movement still works.
             {
                 Is0 = true;
-               
+
                 FuelBar.Value = 0;
             }
- 
-                Lander.Top += SpeedF;
 
-                //While there is remaining fuel applies thrust.
-                
+            Lander.Top += SpeedF;
+
+            //While there is remaining fuel applies thrust.
+
             if (Is0 != true)
             {
                 TotalF -= (TrackVal) * 15;
@@ -441,26 +443,45 @@ namespace Moon_Lander
             ErrorLbl.Hide();
             string Cap = TB1.Text;
             string TotalFuel = TB2.Text;
-
+            bool NoSpecCap = true;
             if (Cap != "" && TotalFuel != "")
             {
-                try //Checks if fuel is a number
-                {
 
-                    TotalF = Convert.ToInt32(TotalFuel);
-                    if (TotalF >= 0 && TotalF <= 5000)
+                foreach (char a in Character)
+                {
+                    if (Cap.Contains(a.ToString()))
                     {
-                        Run();
+                        NoSpecCap = false;
+                        break;
                     }
-                    else
+
+                }
+
+                if (NoSpecCap)
+                {
+                    try //Checks if fuel is a number
                     {
-                        ErrorLbl.Text = "Error: Enter a correct Fuel Value," + Cap;
+
+                        TotalF = Convert.ToInt32(TotalFuel);
+                        if (TotalF >= 0 && TotalF <= 5000)
+                        {
+                            Run();
+                        }
+                        else
+                        {
+                            ErrorLbl.Text = "Error: Enter correct Fuel Value," + Environment.NewLine + " Captain " + Cap;
+                            ErrorLbl.Show();
+                        }
+                    }
+                    catch
+                    {
+                        ErrorLbl.Text = "Error: Enter correct Fuel Value, "+ Environment.NewLine +" Captain " + Cap;
                         ErrorLbl.Show();
                     }
                 }
-                catch
+                else
                 {
-                    ErrorLbl.Text = "Error: Enter a correct Fuel Value," + Cap;
+                    ErrorLbl.Text = "Error: Remove Number and Special Characters ";
                     ErrorLbl.Show();
                 }
             }
@@ -469,6 +490,7 @@ namespace Moon_Lander
                 ErrorLbl.Text = "Error: Fill All Textboxes";
                 ErrorLbl.Show();
             }
+
         }//Start Button
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -509,6 +531,11 @@ namespace Moon_Lander
         {
             double Thrustnum = TrackBar.Value / 15;
             ThrustVal.Text = (Convert.ToInt32(Thrustnum)).ToString();
+        }
+
+        private void ErrorLbl_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
     #endregion
