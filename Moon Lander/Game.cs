@@ -10,7 +10,7 @@ namespace Moon_Lander
         bool ThrustHalf;
         bool LeftB;
         bool RightB;
-        int TooFast = 15; //Sets the limit for how fast lander should be traveling on touch down
+        int TooFast = 10; //Sets the limit for how fast lander should be traveling on touch down
         public int TrackVal;
         const int Gravity = 1; //Gravity value
         int score = 0;
@@ -344,7 +344,7 @@ namespace Moon_Lander
             {
                 Lander.Image = LanderVar.Images[1];
                 SuccessFaillbl.Text = "Sorry Captain " + CapsName + ", Mission Failed. You missed the Landing Pad.";
-                Lander.Top = Moonscape.Height - Lander.Height + 20;//drops the Lander to the bottem of the screen
+                Lander.Top = Moonscape.Height - Lander.Height + 50;//drops the Lander to the bottem of the screen, 50 is to compensate for the extra bit of image at the bottem of the craft.
             } // if not on pad, crashes
 
             SuccessFaillbl.Show(); //shows the label
@@ -481,7 +481,7 @@ namespace Moon_Lander
                 }
                 else
                 {
-                    ErrorLbl.Text = "Error: Remove Number and Special Characters ";
+                    ErrorLbl.Text = "Error: Remove Numbers and Special Characters ";
                     ErrorLbl.Show();
                 }
             }
