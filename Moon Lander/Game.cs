@@ -125,6 +125,8 @@ namespace Moon_Lander
                     Fuel.Hide();
                     TB2.Hide();
                     Coloring.Hide();
+                    TooFastlbl.Hide();
+                    LowFuellbl.Hide();
                     PadTop();
                     SpeedF = 2;
                     break;
@@ -240,7 +242,14 @@ namespace Moon_Lander
             }
 
             speedtrav.Text = SpeedF.ToString();
-
+            if(SpeedF > TooFast)
+            {
+                TooFastlbl.Show();
+            }
+            else
+            {
+                TooFastlbl.Hide();
+            }
 
             //Gets the speed. Can handle if the next round will result in Fuel = 0
 
@@ -375,6 +384,11 @@ namespace Moon_Lander
                 FuelBar.Value = TotalF;
             }
 
+            if(TotalF < Convert.ToInt32(TB2.Text) / 4)
+            {
+                LowFuellbl.Show();
+            }
+
         }
         #region tofocus on grav issue
 
@@ -475,7 +489,7 @@ namespace Moon_Lander
                     }
                     catch
                     {
-                        ErrorLbl.Text = "Error: Enter correct Fuel Value, "+ Environment.NewLine +" Captain " + Cap;
+                        ErrorLbl.Text = "Error: Enter correct Fuel Value, " + Environment.NewLine + " Captain " + Cap;
                         ErrorLbl.Show();
                     }
                 }
@@ -535,7 +549,7 @@ namespace Moon_Lander
 
         private void ErrorLbl_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
     #endregion

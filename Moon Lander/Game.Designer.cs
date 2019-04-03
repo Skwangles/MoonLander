@@ -65,6 +65,8 @@
             this.ThrustVal = new System.Windows.Forms.Label();
             this.Scoretxtlbl = new System.Windows.Forms.Label();
             this.scorelbl = new System.Windows.Forms.Label();
+            this.LowFuellbl = new System.Windows.Forms.Label();
+            this.TooFastlbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
@@ -439,6 +441,30 @@
             this.scorelbl.TabIndex = 34;
             this.scorelbl.Text = "0";
             // 
+            // LowFuellbl
+            // 
+            this.LowFuellbl.AutoSize = true;
+            this.LowFuellbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LowFuellbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LowFuellbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.LowFuellbl.Location = new System.Drawing.Point(568, 402);
+            this.LowFuellbl.Name = "LowFuellbl";
+            this.LowFuellbl.Size = new System.Drawing.Size(72, 17);
+            this.LowFuellbl.TabIndex = 35;
+            this.LowFuellbl.Text = "Low Fuel";
+            // 
+            // TooFastlbl
+            // 
+            this.TooFastlbl.AutoSize = true;
+            this.TooFastlbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TooFastlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TooFastlbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.TooFastlbl.Location = new System.Drawing.Point(568, 419);
+            this.TooFastlbl.Name = "TooFastlbl";
+            this.TooFastlbl.Size = new System.Drawing.Size(72, 17);
+            this.TooFastlbl.TabIndex = 36;
+            this.TooFastlbl.Text = "Too Fast";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,6 +499,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FuelBar);
             this.Controls.Add(this.TrackBar);
+            this.Controls.Add(this.LowFuellbl);
+            this.Controls.Add(this.TooFastlbl);
             this.Controls.Add(this.Bottempanel);
             this.Controls.Add(this.Lander);
             this.Controls.Add(this.Pad);
@@ -534,5 +562,7 @@
         private System.Windows.Forms.Label ThrustVal;
         private System.Windows.Forms.Label Scoretxtlbl;
         private System.Windows.Forms.Label scorelbl;
+        private System.Windows.Forms.Label LowFuellbl;
+        private System.Windows.Forms.Label TooFastlbl;
     }
 }
