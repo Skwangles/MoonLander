@@ -30,208 +30,208 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.Lander = new System.Windows.Forms.PictureBox();
-            this.TrackBar = new System.Windows.Forms.TrackBar();
-            this.FuelBar = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Speed = new System.Windows.Forms.Label();
-            this.Pad = new System.Windows.Forms.PictureBox();
-            this.Bottempanel = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.speedtrav = new System.Windows.Forms.Label();
-            this.Moonscape = new System.Windows.Forms.PictureBox();
-            this.yval = new System.Windows.Forms.Label();
-            this.xval = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pbLander = new System.Windows.Forms.PictureBox();
+            this.TrackbarThrust = new System.Windows.Forms.TrackBar();
+            this.ProgressBar = new System.Windows.Forms.ProgressBar();
+            this.lblfuel = new System.Windows.Forms.Label();
+            this.Speedlbl = new System.Windows.Forms.Label();
+            this.pbLandingPad = new System.Windows.Forms.PictureBox();
+            this.Bottempanelpb = new System.Windows.Forms.PictureBox();
+            this.ThrustLbl = new System.Windows.Forms.Label();
+            this.lblspeedtrav = new System.Windows.Forms.Label();
+            this.Moonscapepb = new System.Windows.Forms.PictureBox();
+            this.yvallbl = new System.Windows.Forms.Label();
+            this.lblxval = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
+            this.lblX = new System.Windows.Forms.Label();
             this.Movetmr = new System.Windows.Forms.Timer(this.components);
             this.SuccessFaillbl = new System.Windows.Forms.Label();
-            this.PB = new System.Windows.Forms.PictureBox();
+            this.PBStartBackground = new System.Windows.Forms.PictureBox();
             this.Infolbl = new System.Windows.Forms.Label();
             this.InfoLbl2 = new System.Windows.Forms.Label();
             this.Infolbl1 = new System.Windows.Forms.Label();
             this.Infolbl3 = new System.Windows.Forms.Label();
-            this.TB1 = new System.Windows.Forms.TextBox();
-            this.TB2 = new System.Windows.Forms.TextBox();
-            this.Fuel = new System.Windows.Forms.Label();
+            this.CapsNameTB = new System.Windows.Forms.TextBox();
+            this.FuelTB = new System.Windows.Forms.TextBox();
+            this.Fuelnumtxtlbl = new System.Windows.Forms.Label();
             this.ErrorLbl = new System.Windows.Forms.Label();
-            this.Coloring = new System.Windows.Forms.PictureBox();
-            this.YN = new System.Windows.Forms.PictureBox();
-            this.Hidu = new System.Windows.Forms.Label();
-            this.StartImg = new System.Windows.Forms.PictureBox();
+            this.ColoringPB = new System.Windows.Forms.PictureBox();
+            this.YNPB = new System.Windows.Forms.PictureBox();
+            this.Capnamtxtlbl = new System.Windows.Forms.Label();
+            this.StartButtonimg = new System.Windows.Forms.PictureBox();
             this.LanderVar = new System.Windows.Forms.ImageList(this.components);
             this.PadIL = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ThrustVal = new System.Windows.Forms.Label();
+            this.ThrustVallbl = new System.Windows.Forms.Label();
             this.Scoretxtlbl = new System.Windows.Forms.Label();
             this.scorelbl = new System.Windows.Forms.Label();
             this.LowFuellbl = new System.Windows.Forms.Label();
             this.TooFastlbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Lander)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bottempanel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Moonscape)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Coloring)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.YN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLander)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackbarThrust)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLandingPad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bottempanelpb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Moonscapepb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBStartBackground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColoringPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YNPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartButtonimg)).BeginInit();
             this.SuspendLayout();
             // 
-            // Lander
+            // pbLander
             // 
-            this.Lander.BackColor = System.Drawing.Color.Transparent;
-            this.Lander.Image = ((System.Drawing.Image)(resources.GetObject("Lander.Image")));
-            this.Lander.Location = new System.Drawing.Point(407, 0);
-            this.Lander.Name = "Lander";
-            this.Lander.Size = new System.Drawing.Size(93, 109);
-            this.Lander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Lander.TabIndex = 1;
-            this.Lander.TabStop = false;
-            this.Lander.LocationChanged += new System.EventHandler(this.Lander_LocationChanged);
-            this.Lander.Click += new System.EventHandler(this.Lander_Click);
+            this.pbLander.BackColor = System.Drawing.Color.Transparent;
+            this.pbLander.Image = ((System.Drawing.Image)(resources.GetObject("pbLander.Image")));
+            this.pbLander.Location = new System.Drawing.Point(407, 0);
+            this.pbLander.Name = "pbLander";
+            this.pbLander.Size = new System.Drawing.Size(93, 109);
+            this.pbLander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLander.TabIndex = 1;
+            this.pbLander.TabStop = false;
+            this.pbLander.LocationChanged += new System.EventHandler(this.Lander_LocationChanged);
+            this.pbLander.Click += new System.EventHandler(this.Lander_Click);
             // 
-            // TrackBar
+            // TrackbarThrust
             // 
-            this.TrackBar.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.TrackBar.LargeChange = 0;
-            this.TrackBar.Location = new System.Drawing.Point(128, 439);
-            this.TrackBar.Maximum = 40;
-            this.TrackBar.Name = "TrackBar";
-            this.TrackBar.Size = new System.Drawing.Size(449, 45);
-            this.TrackBar.SmallChange = 0;
-            this.TrackBar.TabIndex = 2;
-            this.TrackBar.ValueChanged += new System.EventHandler(this.TrackBar_ValueChanged);
-            this.TrackBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrackBar_KeyDown);
-            this.TrackBar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TrackBar_KeyPress);
-            this.TrackBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TrackBar_KeyUp);
+            this.TrackbarThrust.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.TrackbarThrust.LargeChange = 0;
+            this.TrackbarThrust.Location = new System.Drawing.Point(128, 439);
+            this.TrackbarThrust.Maximum = 40;
+            this.TrackbarThrust.Name = "TrackbarThrust";
+            this.TrackbarThrust.Size = new System.Drawing.Size(449, 45);
+            this.TrackbarThrust.SmallChange = 0;
+            this.TrackbarThrust.TabIndex = 2;
+            this.TrackbarThrust.ValueChanged += new System.EventHandler(this.TrackBar_ValueChanged);
+            this.TrackbarThrust.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TrackBar_KeyDown);
+            this.TrackbarThrust.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TrackBar_KeyPress);
+            this.TrackbarThrust.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TrackBar_KeyUp);
             // 
-            // FuelBar
+            // ProgressBar
             // 
-            this.FuelBar.Location = new System.Drawing.Point(641, 439);
-            this.FuelBar.Name = "FuelBar";
-            this.FuelBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.FuelBar.Size = new System.Drawing.Size(129, 35);
-            this.FuelBar.TabIndex = 3;
+            this.ProgressBar.Location = new System.Drawing.Point(641, 439);
+            this.ProgressBar.Name = "ProgressBar";
+            this.ProgressBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ProgressBar.Size = new System.Drawing.Size(129, 35);
+            this.ProgressBar.TabIndex = 3;
             // 
-            // label1
+            // lblfuel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(695, 423);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Fuel";
+            this.lblfuel.AutoSize = true;
+            this.lblfuel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblfuel.Location = new System.Drawing.Point(695, 423);
+            this.lblfuel.Name = "lblfuel";
+            this.lblfuel.Size = new System.Drawing.Size(27, 13);
+            this.lblfuel.TabIndex = 4;
+            this.lblfuel.Text = "Fuel";
             // 
-            // Speed
+            // Speedlbl
             // 
-            this.Speed.AutoSize = true;
-            this.Speed.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Speed.Location = new System.Drawing.Point(8, 445);
-            this.Speed.Name = "Speed";
-            this.Speed.Size = new System.Drawing.Size(97, 17);
-            this.Speed.TabIndex = 5;
-            this.Speed.Text = "Speed (kph)";
-            this.Speed.Click += new System.EventHandler(this.Speed_Click);
+            this.Speedlbl.AutoSize = true;
+            this.Speedlbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Speedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Speedlbl.Location = new System.Drawing.Point(8, 445);
+            this.Speedlbl.Name = "Speedlbl";
+            this.Speedlbl.Size = new System.Drawing.Size(97, 17);
+            this.Speedlbl.TabIndex = 5;
+            this.Speedlbl.Text = "Speed (kph)";
+            this.Speedlbl.Click += new System.EventHandler(this.Speed_Click);
             // 
-            // Pad
+            // pbLandingPad
             // 
-            this.Pad.BackColor = System.Drawing.Color.Transparent;
-            this.Pad.Image = ((System.Drawing.Image)(resources.GetObject("Pad.Image")));
-            this.Pad.Location = new System.Drawing.Point(315, 320);
-            this.Pad.Name = "Pad";
-            this.Pad.Size = new System.Drawing.Size(134, 73);
-            this.Pad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Pad.TabIndex = 6;
-            this.Pad.TabStop = false;
+            this.pbLandingPad.BackColor = System.Drawing.Color.Transparent;
+            this.pbLandingPad.Image = ((System.Drawing.Image)(resources.GetObject("pbLandingPad.Image")));
+            this.pbLandingPad.Location = new System.Drawing.Point(315, 320);
+            this.pbLandingPad.Name = "pbLandingPad";
+            this.pbLandingPad.Size = new System.Drawing.Size(134, 73);
+            this.pbLandingPad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLandingPad.TabIndex = 6;
+            this.pbLandingPad.TabStop = false;
             // 
-            // Bottempanel
+            // Bottempanelpb
             // 
-            this.Bottempanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Bottempanel.Location = new System.Drawing.Point(1, 396);
-            this.Bottempanel.Margin = new System.Windows.Forms.Padding(0);
-            this.Bottempanel.Name = "Bottempanel";
-            this.Bottempanel.Size = new System.Drawing.Size(799, 102);
-            this.Bottempanel.TabIndex = 7;
-            this.Bottempanel.TabStop = false;
+            this.Bottempanelpb.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Bottempanelpb.Location = new System.Drawing.Point(1, 396);
+            this.Bottempanelpb.Margin = new System.Windows.Forms.Padding(0);
+            this.Bottempanelpb.Name = "Bottempanelpb";
+            this.Bottempanelpb.Size = new System.Drawing.Size(799, 102);
+            this.Bottempanelpb.TabIndex = 7;
+            this.Bottempanelpb.TabStop = false;
             // 
-            // label2
+            // ThrustLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(332, 415);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Thrust:";
+            this.ThrustLbl.AutoSize = true;
+            this.ThrustLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ThrustLbl.Location = new System.Drawing.Point(332, 415);
+            this.ThrustLbl.Name = "ThrustLbl";
+            this.ThrustLbl.Size = new System.Drawing.Size(40, 13);
+            this.ThrustLbl.TabIndex = 8;
+            this.ThrustLbl.Text = "Thrust:";
             // 
-            // speedtrav
+            // lblspeedtrav
             // 
-            this.speedtrav.AutoSize = true;
-            this.speedtrav.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.speedtrav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speedtrav.Location = new System.Drawing.Point(24, 462);
-            this.speedtrav.Name = "speedtrav";
-            this.speedtrav.Size = new System.Drawing.Size(31, 15);
-            this.speedtrav.TabIndex = 9;
-            this.speedtrav.Text = "0.00";
+            this.lblspeedtrav.AutoSize = true;
+            this.lblspeedtrav.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblspeedtrav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblspeedtrav.Location = new System.Drawing.Point(24, 462);
+            this.lblspeedtrav.Name = "lblspeedtrav";
+            this.lblspeedtrav.Size = new System.Drawing.Size(31, 15);
+            this.lblspeedtrav.TabIndex = 9;
+            this.lblspeedtrav.Text = "0.00";
             // 
-            // Moonscape
+            // Moonscapepb
             // 
-            this.Moonscape.BackColor = System.Drawing.Color.Transparent;
-            this.Moonscape.Location = new System.Drawing.Point(1, 0);
-            this.Moonscape.Margin = new System.Windows.Forms.Padding(0);
-            this.Moonscape.Name = "Moonscape";
-            this.Moonscape.Size = new System.Drawing.Size(799, 393);
-            this.Moonscape.TabIndex = 10;
-            this.Moonscape.TabStop = false;
+            this.Moonscapepb.BackColor = System.Drawing.Color.Transparent;
+            this.Moonscapepb.Location = new System.Drawing.Point(1, 0);
+            this.Moonscapepb.Margin = new System.Windows.Forms.Padding(0);
+            this.Moonscapepb.Name = "Moonscapepb";
+            this.Moonscapepb.Size = new System.Drawing.Size(799, 393);
+            this.Moonscapepb.TabIndex = 10;
+            this.Moonscapepb.TabStop = false;
             // 
-            // yval
+            // yvallbl
             // 
-            this.yval.AutoSize = true;
-            this.yval.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.yval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yval.Location = new System.Drawing.Point(95, 413);
-            this.yval.Name = "yval";
-            this.yval.Size = new System.Drawing.Size(31, 15);
-            this.yval.TabIndex = 11;
-            this.yval.Text = "0.00";
-            this.yval.Click += new System.EventHandler(this.label3_Click);
+            this.yvallbl.AutoSize = true;
+            this.yvallbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.yvallbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yvallbl.Location = new System.Drawing.Point(95, 413);
+            this.yvallbl.Name = "yvallbl";
+            this.yvallbl.Size = new System.Drawing.Size(31, 15);
+            this.yvallbl.TabIndex = 11;
+            this.yvallbl.Text = "0.00";
+            this.yvallbl.Click += new System.EventHandler(this.label3_Click);
             // 
-            // xval
+            // lblxval
             // 
-            this.xval.AutoSize = true;
-            this.xval.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.xval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xval.Location = new System.Drawing.Point(34, 413);
-            this.xval.Name = "xval";
-            this.xval.Size = new System.Drawing.Size(31, 15);
-            this.xval.TabIndex = 12;
-            this.xval.Text = "0.00";
+            this.lblxval.AutoSize = true;
+            this.lblxval.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblxval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblxval.Location = new System.Drawing.Point(34, 413);
+            this.lblxval.Name = "lblxval";
+            this.lblxval.Size = new System.Drawing.Size(31, 15);
+            this.lblxval.TabIndex = 12;
+            this.lblxval.Text = "0.00";
             // 
-            // label5
+            // lblY
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 413);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 15);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Y:";
+            this.lblY.AutoSize = true;
+            this.lblY.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblY.Location = new System.Drawing.Point(71, 413);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(19, 15);
+            this.lblY.TabIndex = 13;
+            this.lblY.Text = "Y:";
             // 
-            // label6
+            // lblX
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 413);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 15);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "X:";
+            this.lblX.AutoSize = true;
+            this.lblX.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblX.Location = new System.Drawing.Point(8, 413);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(20, 15);
+            this.lblX.TabIndex = 14;
+            this.lblX.Text = "X:";
             // 
             // Movetmr
             // 
@@ -248,14 +248,14 @@
             this.SuccessFaillbl.TabIndex = 15;
             this.SuccessFaillbl.Text = "WinLose";
             // 
-            // PB
+            // PBStartBackground
             // 
-            this.PB.BackColor = System.Drawing.Color.Aqua;
-            this.PB.Location = new System.Drawing.Point(-759, 462);
-            this.PB.Name = "PB";
-            this.PB.Size = new System.Drawing.Size(799, 496);
-            this.PB.TabIndex = 18;
-            this.PB.TabStop = false;
+            this.PBStartBackground.BackColor = System.Drawing.Color.Aqua;
+            this.PBStartBackground.Location = new System.Drawing.Point(-759, 462);
+            this.PBStartBackground.Name = "PBStartBackground";
+            this.PBStartBackground.Size = new System.Drawing.Size(799, 496);
+            this.PBStartBackground.TabIndex = 18;
+            this.PBStartBackground.TabStop = false;
             // 
             // Infolbl
             // 
@@ -295,46 +295,46 @@
             this.Infolbl3.AutoSize = true;
             this.Infolbl3.BackColor = System.Drawing.Color.OrangeRed;
             this.Infolbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Infolbl3.Location = new System.Drawing.Point(6, 262);
+            this.Infolbl3.Location = new System.Drawing.Point(22, 259);
             this.Infolbl3.Name = "Infolbl3";
             this.Infolbl3.Size = new System.Drawing.Size(476, 225);
             this.Infolbl3.TabIndex = 22;
             this.Infolbl3.Text = resources.GetString("Infolbl3.Text");
             // 
-            // TB1
+            // CapsNameTB
             // 
-            this.TB1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB1.ForeColor = System.Drawing.Color.Yellow;
-            this.TB1.Location = new System.Drawing.Point(618, 49);
-            this.TB1.MaxLength = 9;
-            this.TB1.Name = "TB1";
-            this.TB1.Size = new System.Drawing.Size(85, 26);
-            this.TB1.TabIndex = 23;
-            this.TB1.TextChanged += new System.EventHandler(this.TB1_TextChanged);
+            this.CapsNameTB.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.CapsNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CapsNameTB.ForeColor = System.Drawing.Color.Yellow;
+            this.CapsNameTB.Location = new System.Drawing.Point(618, 49);
+            this.CapsNameTB.MaxLength = 9;
+            this.CapsNameTB.Name = "CapsNameTB";
+            this.CapsNameTB.Size = new System.Drawing.Size(85, 26);
+            this.CapsNameTB.TabIndex = 23;
+            this.CapsNameTB.TextChanged += new System.EventHandler(this.TB1_TextChanged);
             // 
-            // TB2
+            // FuelTB
             // 
-            this.TB2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.TB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB2.ForeColor = System.Drawing.Color.Yellow;
-            this.TB2.Location = new System.Drawing.Point(632, 122);
-            this.TB2.MaxLength = 4;
-            this.TB2.Name = "TB2";
-            this.TB2.Size = new System.Drawing.Size(60, 30);
-            this.TB2.TabIndex = 25;
+            this.FuelTB.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.FuelTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FuelTB.ForeColor = System.Drawing.Color.Yellow;
+            this.FuelTB.Location = new System.Drawing.Point(632, 122);
+            this.FuelTB.MaxLength = 4;
+            this.FuelTB.Name = "FuelTB";
+            this.FuelTB.Size = new System.Drawing.Size(60, 30);
+            this.FuelTB.TabIndex = 25;
             // 
-            // Fuel
+            // Fuelnumtxtlbl
             // 
-            this.Fuel.AutoSize = true;
-            this.Fuel.BackColor = System.Drawing.Color.Lime;
-            this.Fuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fuel.Location = new System.Drawing.Point(585, 79);
-            this.Fuel.Name = "Fuel";
-            this.Fuel.Size = new System.Drawing.Size(149, 40);
-            this.Fuel.TabIndex = 26;
-            this.Fuel.Text = "How Much Fuel?\r\n      (0-5000)";
-            this.Fuel.Click += new System.EventHandler(this.Fuel_Click);
+            this.Fuelnumtxtlbl.AutoSize = true;
+            this.Fuelnumtxtlbl.BackColor = System.Drawing.Color.Lime;
+            this.Fuelnumtxtlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fuelnumtxtlbl.Location = new System.Drawing.Point(585, 79);
+            this.Fuelnumtxtlbl.Name = "Fuelnumtxtlbl";
+            this.Fuelnumtxtlbl.Size = new System.Drawing.Size(149, 40);
+            this.Fuelnumtxtlbl.TabIndex = 26;
+            this.Fuelnumtxtlbl.Text = "How Much Fuel?\r\n      (0-5000)";
+            this.Fuelnumtxtlbl.Click += new System.EventHandler(this.Fuel_Click);
             // 
             // ErrorLbl
             // 
@@ -349,48 +349,48 @@
             this.ErrorLbl.Text = "Fuel Value Is Incorrect";
             this.ErrorLbl.TextChanged += new System.EventHandler(this.ErrorLbl_TextChanged);
             // 
-            // Coloring
+            // ColoringPB
             // 
-            this.Coloring.BackColor = System.Drawing.Color.DarkOrange;
-            this.Coloring.Location = new System.Drawing.Point(608, 220);
-            this.Coloring.Name = "Coloring";
-            this.Coloring.Size = new System.Drawing.Size(180, 129);
-            this.Coloring.TabIndex = 28;
-            this.Coloring.TabStop = false;
-            this.Coloring.Click += new System.EventHandler(this.Coloring_Click);
+            this.ColoringPB.BackColor = System.Drawing.Color.DarkOrange;
+            this.ColoringPB.Location = new System.Drawing.Point(608, 220);
+            this.ColoringPB.Name = "ColoringPB";
+            this.ColoringPB.Size = new System.Drawing.Size(180, 129);
+            this.ColoringPB.TabIndex = 28;
+            this.ColoringPB.TabStop = false;
+            this.ColoringPB.Click += new System.EventHandler(this.Coloring_Click);
             // 
-            // YN
+            // YNPB
             // 
-            this.YN.BackColor = System.Drawing.Color.Lime;
-            this.YN.Location = new System.Drawing.Point(537, 12);
-            this.YN.Name = "YN";
-            this.YN.Size = new System.Drawing.Size(251, 149);
-            this.YN.TabIndex = 29;
-            this.YN.TabStop = false;
+            this.YNPB.BackColor = System.Drawing.Color.Lime;
+            this.YNPB.Location = new System.Drawing.Point(537, 12);
+            this.YNPB.Name = "YNPB";
+            this.YNPB.Size = new System.Drawing.Size(251, 149);
+            this.YNPB.TabIndex = 29;
+            this.YNPB.TabStop = false;
             // 
-            // Hidu
+            // Capnamtxtlbl
             // 
-            this.Hidu.AutoSize = true;
-            this.Hidu.BackColor = System.Drawing.Color.Lime;
-            this.Hidu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hidu.Location = new System.Drawing.Point(540, 27);
-            this.Hidu.Margin = new System.Windows.Forms.Padding(0);
-            this.Hidu.Name = "Hidu";
-            this.Hidu.Size = new System.Drawing.Size(245, 20);
-            this.Hidu.TabIndex = 30;
-            this.Hidu.Text = "What\'s Your Name Captain?";
+            this.Capnamtxtlbl.AutoSize = true;
+            this.Capnamtxtlbl.BackColor = System.Drawing.Color.Lime;
+            this.Capnamtxtlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Capnamtxtlbl.Location = new System.Drawing.Point(540, 27);
+            this.Capnamtxtlbl.Margin = new System.Windows.Forms.Padding(0);
+            this.Capnamtxtlbl.Name = "Capnamtxtlbl";
+            this.Capnamtxtlbl.Size = new System.Drawing.Size(245, 20);
+            this.Capnamtxtlbl.TabIndex = 30;
+            this.Capnamtxtlbl.Text = "What\'s Your Name Captain?";
             // 
-            // StartImg
+            // StartButtonimg
             // 
-            this.StartImg.Image = ((System.Drawing.Image)(resources.GetObject("StartImg.Image")));
-            this.StartImg.Location = new System.Drawing.Point(387, 71);
-            this.StartImg.Name = "StartImg";
-            this.StartImg.Size = new System.Drawing.Size(95, 92);
-            this.StartImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.StartImg.TabIndex = 31;
-            this.StartImg.TabStop = false;
-            this.StartImg.Visible = false;
-            this.StartImg.Click += new System.EventHandler(this.StartImg_Click);
+            this.StartButtonimg.Image = ((System.Drawing.Image)(resources.GetObject("StartButtonimg.Image")));
+            this.StartButtonimg.Location = new System.Drawing.Point(387, 71);
+            this.StartButtonimg.Name = "StartButtonimg";
+            this.StartButtonimg.Size = new System.Drawing.Size(95, 92);
+            this.StartButtonimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.StartButtonimg.TabIndex = 31;
+            this.StartButtonimg.TabStop = false;
+            this.StartButtonimg.Visible = false;
+            this.StartButtonimg.Click += new System.EventHandler(this.StartImg_Click);
             // 
             // LanderVar
             // 
@@ -408,15 +408,15 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // ThrustVal
+            // ThrustVallbl
             // 
-            this.ThrustVal.AutoSize = true;
-            this.ThrustVal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ThrustVal.Location = new System.Drawing.Point(384, 415);
-            this.ThrustVal.Name = "ThrustVal";
-            this.ThrustVal.Size = new System.Drawing.Size(35, 13);
-            this.ThrustVal.TabIndex = 32;
-            this.ThrustVal.Text = "label3";
+            this.ThrustVallbl.AutoSize = true;
+            this.ThrustVallbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ThrustVallbl.Location = new System.Drawing.Point(384, 415);
+            this.ThrustVallbl.Name = "ThrustVallbl";
+            this.ThrustVallbl.Size = new System.Drawing.Size(35, 13);
+            this.ThrustVallbl.TabIndex = 32;
+            this.ThrustVallbl.Text = "label3";
             // 
             // Scoretxtlbl
             // 
@@ -474,52 +474,52 @@
             this.ClientSize = new System.Drawing.Size(800, 496);
             this.Controls.Add(this.Scoretxtlbl);
             this.Controls.Add(this.scorelbl);
-            this.Controls.Add(this.StartImg);
-            this.Controls.Add(this.Hidu);
-            this.Controls.Add(this.TB1);
-            this.Controls.Add(this.Fuel);
-            this.Controls.Add(this.TB2);
-            this.Controls.Add(this.YN);
+            this.Controls.Add(this.StartButtonimg);
+            this.Controls.Add(this.Capnamtxtlbl);
+            this.Controls.Add(this.CapsNameTB);
+            this.Controls.Add(this.Fuelnumtxtlbl);
+            this.Controls.Add(this.FuelTB);
+            this.Controls.Add(this.YNPB);
             this.Controls.Add(this.Infolbl1);
             this.Controls.Add(this.InfoLbl2);
             this.Controls.Add(this.Infolbl);
-            this.Controls.Add(this.Coloring);
+            this.Controls.Add(this.ColoringPB);
             this.Controls.Add(this.Infolbl3);
             this.Controls.Add(this.ErrorLbl);
-            this.Controls.Add(this.PB);
-            this.Controls.Add(this.ThrustVal);
+            this.Controls.Add(this.PBStartBackground);
+            this.Controls.Add(this.ThrustVallbl);
             this.Controls.Add(this.SuccessFaillbl);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.xval);
-            this.Controls.Add(this.yval);
-            this.Controls.Add(this.speedtrav);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Speed);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.FuelBar);
-            this.Controls.Add(this.TrackBar);
+            this.Controls.Add(this.lblX);
+            this.Controls.Add(this.lblY);
+            this.Controls.Add(this.lblxval);
+            this.Controls.Add(this.yvallbl);
+            this.Controls.Add(this.lblspeedtrav);
+            this.Controls.Add(this.ThrustLbl);
+            this.Controls.Add(this.Speedlbl);
+            this.Controls.Add(this.lblfuel);
+            this.Controls.Add(this.ProgressBar);
+            this.Controls.Add(this.TrackbarThrust);
             this.Controls.Add(this.LowFuellbl);
             this.Controls.Add(this.TooFastlbl);
-            this.Controls.Add(this.Bottempanel);
-            this.Controls.Add(this.Lander);
-            this.Controls.Add(this.Pad);
-            this.Controls.Add(this.Moonscape);
+            this.Controls.Add(this.Bottempanelpb);
+            this.Controls.Add(this.pbLander);
+            this.Controls.Add(this.pbLandingPad);
+            this.Controls.Add(this.Moonscapepb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Game";
             this.Text = "Game";
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.Lander)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bottempanel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Moonscape)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Coloring)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.YN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StartImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLander)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackbarThrust)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLandingPad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bottempanelpb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Moonscapepb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBStartBackground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ColoringPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YNPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartButtonimg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,39 +527,39 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox Lander;
-        private System.Windows.Forms.TrackBar TrackBar;
-        private System.Windows.Forms.ProgressBar FuelBar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Speed;
-        private System.Windows.Forms.PictureBox Pad;
-        private System.Windows.Forms.PictureBox Bottempanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label speedtrav;
-        private System.Windows.Forms.PictureBox Moonscape;
-        private System.Windows.Forms.Label yval;
-        private System.Windows.Forms.Label xval;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pbLander;
+        private System.Windows.Forms.TrackBar TrackbarThrust;
+        private System.Windows.Forms.ProgressBar ProgressBar;
+        private System.Windows.Forms.Label lblfuel;
+        private System.Windows.Forms.Label Speedlbl;
+        private System.Windows.Forms.PictureBox pbLandingPad;
+        private System.Windows.Forms.PictureBox Bottempanelpb;
+        private System.Windows.Forms.Label ThrustLbl;
+        private System.Windows.Forms.Label lblspeedtrav;
+        private System.Windows.Forms.PictureBox Moonscapepb;
+        private System.Windows.Forms.Label yvallbl;
+        private System.Windows.Forms.Label lblxval;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.Label lblX;
         private System.Windows.Forms.Timer Movetmr;
         private System.Windows.Forms.Label SuccessFaillbl;
-        private System.Windows.Forms.PictureBox PB;
+        private System.Windows.Forms.PictureBox PBStartBackground;
         private System.Windows.Forms.Label Infolbl;
         private System.Windows.Forms.Label InfoLbl2;
         private System.Windows.Forms.Label Infolbl1;
         private System.Windows.Forms.Label Infolbl3;
-        private System.Windows.Forms.TextBox TB1;
-        private System.Windows.Forms.TextBox TB2;
-        private System.Windows.Forms.Label Fuel;
+        private System.Windows.Forms.TextBox CapsNameTB;
+        private System.Windows.Forms.TextBox FuelTB;
+        private System.Windows.Forms.Label Fuelnumtxtlbl;
         private System.Windows.Forms.Label ErrorLbl;
-        private System.Windows.Forms.PictureBox Coloring;
-        private System.Windows.Forms.PictureBox YN;
-        private System.Windows.Forms.Label Hidu;
-        private System.Windows.Forms.PictureBox StartImg;
+        private System.Windows.Forms.PictureBox ColoringPB;
+        private System.Windows.Forms.PictureBox YNPB;
+        private System.Windows.Forms.Label Capnamtxtlbl;
+        private System.Windows.Forms.PictureBox StartButtonimg;
         private System.Windows.Forms.ImageList LanderVar;
         private System.Windows.Forms.ImageList PadIL;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label ThrustVal;
+        private System.Windows.Forms.Label ThrustVallbl;
         private System.Windows.Forms.Label Scoretxtlbl;
         private System.Windows.Forms.Label scorelbl;
         private System.Windows.Forms.Label LowFuellbl;

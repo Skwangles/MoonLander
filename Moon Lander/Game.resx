@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Lander.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbLander.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHgAAACZCAYAAADkfP71AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAACVwSURBVHhe7d1prB7VeQdwPvCh
@@ -284,7 +284,7 @@
         qLOzp9Ghzs6eRoc6O3saHers7GlUqNnj/wEowTu1O7377wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Pad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbLandingPad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAABwCAYAAABbwT+GAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
         DwAAjA8AAP1SAACBQAAAfXkAAOmLAAA85QAAGcxzPIV3AAAKOWlDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
@@ -461,7 +461,7 @@ by controlling the amount of thrust using the track bar.
 Gravity has a constant amount of 20kph.
 To land successfully, must be going less than 15kph.</value>
   </data>
-  <data name="StartImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="StartButtonimg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAAd0SU1FB9kBChAjJDW0HlMAADJcSURBVHhe7Z0HmFXV2e/z3fvde5PYFUQpMxTB
